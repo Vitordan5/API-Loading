@@ -5,22 +5,35 @@ Aplicação desenvolvida para seleção de candidatos através da compatibilidad
 ## Tabela de conteúdos
 =================
 <!--ts-->
-   * [Sobre](###sobre)
-   * [Como usar](###como-usar)
-   * [Tecnologias](###tecnologias)
-   * [Contribuintes](###contribuintes)
+   * [Sobre](###Sobre)
+   * [Como usar](###Como-usar)
+   * [Instalação](###Instalacao)
+   * [Tecnologias](###Tecnologias)
+   * [Contribuintes](###Contribuintes)
 <!--te-->
 
 ### Sobre
 
-Foi pensada então uma plataforma web que auxilie o usuário a definir a sua próxima contratação dentro do banco de dados através dos parâmetros: idade, localidade, gênero, idioma, habilidades, PCD, dependentes, setor de atuação e nivel de escolaridade;
+> O projeto consiste a criação de uma plataforma para otimizar a seleção de candidatos.
 
-### Como usar
+A construção será através de uma plataforma web que auxilie o usuário a definir a suas próximas contratações dentro do banco de dados através dos parâmetros: idade, localidade, gênero, idioma, habilidades, PCD, dependentes, setor de atuação e nivel de escolaridade;
+
+### Como Usar
+
+O cliente poderá fazer uma pesquisa de possível candidatos através de filtros otimizados.
+
+### Instalação
+
+A implementação do projeto será necessário o usuário ter instalado Python na versão superior 3.8, assim como instalar as frameworks: flask, flask_mysqldb, e request (com o comando pip install no terminal). 
+É necessário criar uma conexão com o banco local, foi utilizado a porta: 3306. Caso seu banco possua uma senha, fazer a alteração no arquivo "app.py" na configuração de password.
+Rodar o arquivo "app.py" e abrir o localhost em seu navegador.
+
 
 ### Tecnologias
 * Python
 * MySQL
 * Flask
+* Bootstrap
 
 ### Contribuintes
 * [<img src="https://avatars.githubusercontent.com/u/53946335?s=400&v=4" width=60><br><sub>Daniel Bolognesi</sub>](https://github.com/yaybolognesi)
