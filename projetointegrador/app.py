@@ -7,7 +7,7 @@ app.secret_key = "caircocoders-ednalan"
         
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = '29031993'
+app.config['MYSQL_PASSWORD'] = '1234'
 app.config['MYSQL_DB'] = 'mydb'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 mysql = MySQL(app)
@@ -25,7 +25,7 @@ def search():
     pcd = request.form["pcd"]
     genero = request.form["genero"]
     cursor = mysql.connection.cursor()
-    query = "SELECT * from cdd WHERE data_nascimento LIKE '%{}%' AND idiomas LIKE '%{}%' AND nivel_escoladidade LIKE '%{}%' AND dependentes LIKE '%{}%' AND pcd LIKE '%{}%' AND genero LIKE '%{}%'".format(idade,idioma,escolaridade, dependentes, pcd,genero)
+    query = "SELECT * from cdd WHERE data_nascimento LIKE '%{}%' AND idiomas LIKE '%{}%' AND nivel_escoladidade LIKE '%{}%' AND dependentes LIKE '%{}%' AND pcd LIKE '%{}%' AND genero LIKE '%{}%'".format(idade,idioma,escolaridade,dependentes,pcd,genero)
     cursor.execute(query)
     numrows = int(cursor.rowcount)
     result = cursor.fetchall()

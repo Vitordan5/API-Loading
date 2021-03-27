@@ -1,16 +1,22 @@
-<h3>{{numrows}} Candidatos encontrados</h3>
-<table class="table table-striped">
+<h3 class="titulo-result">{{numrows}} Registros Encontrados...</h3>
+<table class="table table-bordered">
 
-   <thead>
+   <thead class="thead-dark">
       <tr>
-         <th>CPF</th>
-         <th>Nome</th>
+         <th scope="col">Nome</th>
+         <th scope="col">Escolaridade</th>
+         <th scope="col">Idiomas</th>
+         <th scope="col">PCD</th>
+         <th scope="col">Genero</th>
       </tr>
   </thead>
   <tbody>
 {% for row in cdd %}  
    <tr>
-    <td>{{row.CPF}}</td>
-    <td>{{row.NOME}}</td>
+      <td>{{row.NOME}}</td>
+      <td>{{row.NIVEL_ESCOLADIDADE}}</td>
+      <td>{{row.IDIOMAS}}</td>
+      <td>{{row.PCD}}</td>
+      <td>{{row.GENERO}}</td>
    </tr>
 {% endfor %} 
