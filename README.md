@@ -20,17 +20,30 @@ A construção será através de uma plataforma web que auxilie o usuário a def
 
 ### Como Usar
 
-O cliente poderá fazer uma pesquisa de possível candidatos através de filtros otimizados.
+O cliente pode fazer uma pesquisa de possíveis candidatos de filtros otimizados.
 
 ### Instalação
 
-A implementação do projeto será necessário o usuário ter instalado Python na versão superior 3.8, assim como instalar as frameworks: flask, flask_mysqldb, e request (com o comando pip install no terminal). 
-É necessário criar uma conexão com o banco local, foi utilizado a porta: 3306. Caso seu banco possua uma senha, fazer a alteração no arquivo "app.py" na configuração de password.
-Rodar o arquivo "app.py" e abrir o localhost em seu navegador.
+A implementação do projeto será necessário o usuário ter instalado Python na versão 3.9 ou superior, assim como instalar as frameworks:
 
+  pip install flask
+  pip install flask_mysqldb
+  pip install request
+  
+Após realizar o clone do projeto em sua maquina, execute o Script "cdd.sql" no Mysql para criar o banco, tabelas, clounas e inserir alguns dados. É necessário criar uma conexão com o banco local, foi utilizado a porta 3306 padrão da instalão. Caso seu banco possua uma senha, fazer a alteração no arquivo "app.py" na configuração de password:
+ 
+ ![1](https://github.com/Vitordan5/API-Loading/blob/main/gifs/1.png)
+
+Após importar as bibliotecas abra o arquivo "app.py" na IDE e execute a aplicação:
+
+![2](https://github.com/Vitordan5/API-Loading/blob/main/gifs/2.gif)
+
+A aplicação irá abrir uma guia no seu navegador padrão:
+
+![3](https://github.com/Vitordan5/API-Loading/blob/main/gifs/3.gif)
 
 ### Tecnologias
-* Python
+* Python 3.9.2 
 * MySQL
 * Flask
 * Bootstrap
