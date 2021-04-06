@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, request, jsonify
 from flask_mysqldb import MySQL,MySQLdb 
  
@@ -7,7 +8,7 @@ app.secret_key = "caircocoders-ednalan"
         
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = '1234'
+app.config['MYSQL_PASSWORD'] = '97855818'
 app.config['MYSQL_DB'] = 'mydb'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 mysql = MySQL(app)
@@ -24,12 +25,21 @@ def search():
     dependentes = request.form["dependentes"]
     pcd = request.form["pcd"]
     genero = request.form["genero"]
+    checkIda = request.form["checkIdade"]
+    checkIdi = request.form["checkIdioma"]
+    checkEsc = request.form["checkEscolaridade"]
+    checkDep = request.form["checkDependentes"]
+    checkPcd = request.form["checkPCD"]
+    checkGen = request.form["checkGenero"]
+    print("//////")
+    print(checkIda, checkIdi, checkEsc,checkDep, checkPcd, checkGen)
+    print("//////")
     cursor = mysql.connection.cursor()
     query = "SELECT * from cdd WHERE data_nascimento LIKE '%{}%' AND idiomas LIKE '%{}%' AND nivel_escoladidade LIKE '%{}%' AND dependentes LIKE '%{}%' AND pcd LIKE '%{}%' AND genero LIKE '%{}%'".format(idade,idioma,escolaridade,dependentes,pcd,genero)
     cursor.execute(query)
     numrows = int(cursor.rowcount)
     result = cursor.fetchall()
-    return jsonify({'htmlresponse': render_template('response.html', cdd=result,numrows=numrows)})
+    return jsonify({'htmlresponse': render_template('response.html', cdd=result, numrows=numrows)})
 
 if __name__ == "__main__":
     app.run(debug=True)

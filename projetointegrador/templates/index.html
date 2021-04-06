@@ -12,7 +12,7 @@
   <script>
     $(document).ready(function(){
       load_data();
-      function load_data(ida,idi,esc,dep,pcd,gen){
+      function load_data(ida,idi,esc,dep,pcd,gen,ckida,ckidi,ckesc,ckdep,ckpcd,ckgen){
         $.ajax({
           url:"/search",
           method:"POST",
@@ -21,7 +21,13 @@
           escolaridade: esc,
           dependentes: dep,
           pcd: pcd,
-          genero:gen},
+          genero:gen,
+          checkIdade: ckida,
+          checkIdioma: ckidi,
+          checkEscolaridade: ckesc,
+          checkDependentes: ckdep,
+          checkPCD: ckpcd,
+          checkGenero: ckgen},  
           success:function(data){
             $('#result').html(data);
             $("#result").append(data.htmlresponse);
@@ -36,7 +42,37 @@
         var dependente_val = $('#dependente_input').val();
         var pcd_val = $('#pcd_input').val();
         var genero_val = $('#genero_input').val();
-        load_data(idade_val,idioma_val,escolarida_val,dependente_val,pcd_val,genero_val)
+        if($('#checkida').is(":checked")){
+          var checkida_val = $('#checkida').val();
+        }else {
+          var checkida_val = 0;
+        }
+        if($('#checkidi').is(":checked")){
+          var checkidi_val = $('#checkidi').val();
+        }else {
+          var checkidi_val = 0;
+        }
+        if($('#checkesc').is(":checked")){
+          var checkesc_val = $('#checkesc').val();
+        }else {
+          var checkesc_val = 0;
+        }
+        if ($('#checkdep').is(":checked")) {
+               var checkdep_val = $('#checkdep').val();
+        }else {
+          var checkdep_val = 0;
+        }
+        if($('#checkpcd').is(":checked")){
+          var checkpcd_val = $('#checkpcd').val();
+        }else {
+          var checkpcd_val = 0;
+        }
+        if($('#checkgen').is(":checked")){
+          var checkgen_val = $('#checkgen').val();
+        }else {
+          var checkgen_val = 0;
+        }
+        load_data(idade_val,idioma_val,escolarida_val,dependente_val,pcd_val,genero_val,checkida_val,checkidi_val,checkesc_val,checkdep_val,checkpcd_val,checkgen_val)
       });
     });
   </script>
@@ -48,31 +84,32 @@
     <div class="search-box col-12">
         <div class="row">
             <div class="input-group">
-                <input type="text" name="idade" id="idade_input" class="form-control mb-3" placeholder="Idade">
+              <input type="checkbox" class="form-check-input" id="checkida" value="Idade">
+              <input type="text" name="idade" id="idade_input" class="form-control mb-3" placeholder="Idade">
             </div>
             <div class="input-group">
-                <input type="text" name="idioma" id="idioma_input" class="form-control mb-3" placeholder="Idioma">
+              <input type="checkbox" class="form-check-input" id="checkidi" value="Idioma">
+              <input type="text" name="idioma" id="idioma_input" class="form-control mb-3" placeholder="Idioma">
             </div> 
             <div class="input-group">
-                <input type="text" name="nivel_escolaridade" id="escolarildade_input" class="form-control mb-3" placeholder="Nivel de escolaridade">
+              <input type="checkbox" class="form-check-input" id="checkesc" value="Escolaridade">
+              <input type="text" name="nivel_escolaridade" id="escolarildade_input" class="form-control mb-3" placeholder="Nivel de escolaridade">
             </div>                    
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <label class="input-group-text" for="inputGroupSelect01">Dependentes</label>
+                  <input type="checkbox" class="form-check-input" id="checkdep" value="Dependentes">
+                  <label class="input-group-text" for="inputGroupSelect01">Dependentes</label>
                 </div>
                 <select id="dependente_input" class="custom-select">
                     <option selected>Escolher...</option>
-                    <option value="0">Nenhum</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
+                    <option value="1">Sim</option>
+                    <option value="0">Não</option>
                 </select>
             </div> 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <label class="input-group-text" for="inputGroupSelect01">PCD</label>
+                  <input type="checkbox" class="form-check-input" id="checkpcd" value="PCD">
+                  <label class="input-group-text" for="inputGroupSelect01">PCD</label>
                 </div>
                 <select id="pcd_input" class="custom-select">
                     <option selected>Escolher...</option>
@@ -82,7 +119,8 @@
             </div> 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <label class="input-group-text" for="inputGroupSelect01">Genero</label>
+                  <input type="checkbox" class="form-check-input" id="checkgen" value="Genero">
+                  <label class="input-group-text" for="inputGroupSelect01">Genero</label>
                 </div>
                 <select id="genero_input" class="custom-select">
                     <option selected>Escolher...</option>
