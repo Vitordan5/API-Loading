@@ -31,11 +31,29 @@ def search():
     checkDep = request.form["checkDependentes"]
     checkPcd = request.form["checkPCD"]
     checkGen = request.form["checkGenero"]
-    print("//////")
-    print(checkIda, checkIdi, checkEsc,checkDep, checkPcd, checkGen)
-    print("//////")
+    
+    #Verificação dos ChecksBox
+    idadeBus = ''
+    idiomaBus = ''
+    escolaridadeBus = ''
+    generoBus = ''
+    dependentesBus =''
+    pcdBus =''
+    if checkIda == 'Idade' :
+        idadeBus = idade
+    if checkIdi == 'Idioma':
+        idiomaBus = idioma
+    if checkEsc == 'Escolaridade':
+        escolaridadeBus = escolaridade
+    if checkGen == 'Genero':
+        generoBus = genero
+    if checkDep == 'Dependentes':
+        dependentesBus = dependentes
+    if checkPcd == 'PCD':
+        pcdBus = pcd
+    #Fazendo a busca no BD
     cursor = mysql.connection.cursor()
-    query = "SELECT * from cdd WHERE data_nascimento LIKE '%{}%' AND idiomas LIKE '%{}%' AND nivel_escoladidade LIKE '%{}%' AND dependentes LIKE '%{}%' AND pcd LIKE '%{}%' AND genero LIKE '%{}%'".format(idade,idioma,escolaridade,dependentes,pcd,genero)
+    query = "SELECT * from cdd WHERE data_nascimento LIKE '%{}%' AND idiomas LIKE '%{}%' AND nivel_escoladidade LIKE '%{}%' AND dependentes LIKE '%{}%' AND pcd LIKE '%{}%' AND genero LIKE '%{}%'".format(idadeBus,idiomaBus ,escolaridadeBus ,dependentesBus,pcdBus,generoBus)
     cursor.execute(query)
     numrows = int(cursor.rowcount)
     result = cursor.fetchall()
