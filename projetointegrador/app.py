@@ -3,9 +3,7 @@ from flask import Flask, render_template, request, jsonify
 from flask_mysqldb import MySQL,MySQLdb 
  
 app = Flask(__name__)
-        
-app.secret_key = "caircocoders-ednalan"
-        
+                
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = '97855818'
