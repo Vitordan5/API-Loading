@@ -45,10 +45,10 @@ O projeto consiste na criação de uma plataforma web simples, manutenível e ve
 
 
 ## 3.2 Requisitos Não Funcionais</br>
-•    Documentação completa e detalhada ao final do projeto;
-•    Testes de Performance do Banco;
-•    Relatórios de Desempenho do Projeto e Equipe;
-•    Diagramas e Modelo Relacional;</br>
+•    Documentação completa e detalhada ao final do projeto;</br>
+•    Testes de Performance do Banco;</br>
+•    Relatórios de Desempenho do Projeto e Equipe;</br>
+•    Diagramas e Modelo Relacional;</br></br>
 
 # 4. Diagrama e Modelo Relacional</br></br>
 
