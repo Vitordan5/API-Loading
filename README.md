@@ -3,8 +3,7 @@
 ## Menu
 
 <!--ts-->
-   * [SOBRE](## 1. Apresentação do Projeto)
-   * [VISÃO DO PROJETO](## 1.1. Visão do Projeto)
+   * [VISÃO DO PROJETO](###1.1. Visão do Projeto)
    * [EVOLUÇÃO E DESENVOLVIMENTO DO PROJETO](## 1.2 Evolução e Desenvolvimento do Projeto)
    * [TECNOLOGIAS UTILIZADAS](## 1.3 Tecnologias Utilizadas)
    * [REQUISITOS](## 3. Requisitos)
