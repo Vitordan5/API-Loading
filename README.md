@@ -16,12 +16,12 @@
 <!--te-->
 
 
-## 1. Apresentação do Projeto</br>
+# 1. Apresentação do Projeto</br>
 
 ## 1.1. Visão do Projeto</br>
 O projeto consiste na criação de uma plataforma web simples, manutenível e versátil para busca de candidatos e vagas de emprego, com foco na otimização na seleção de candidatos.
 </br></br>
-##1.2 Evolução e Desenvolvimento do Projeto</br>
+## 1.2 Evolução e Desenvolvimento do Projeto</br>
 É possível nesta planilha encontrar os detalhes do desenvolvimento do projeto, esforço e prioridade das atividades, bem como a data de conclusão.
 </br></br>
 ## 1.3 Tecnologias Utilizadas</br>
@@ -33,30 +33,30 @@ O projeto consiste na criação de uma plataforma web simples, manutenível e ve
 •    Workbench</br>
 •    Postman</br>
 
-##2. Arquitetura do Projeto</br>
+# 2. Arquitetura do Projeto</br>
 
 </br>
 
-##3. Requisitos</br></br>
-##3.1 Requisitos Funcionais</br>
+# 3. Requisitos</br></br>
+## 3.1 Requisitos Funcionais</br>
 •    Definir filtros personalizados para busca de candidatos e vagas;</br>
 •    Visualização resumida e/ou completa dos candidatos e vagas;</br>
 •    Submissão de currículos na interface;</br>
 •    Submissão de uma ou mais vagas na interface;</br>
 
 
-##3.2 Requisitos Não Funcionais</br>
+## 3.2 Requisitos Não Funcionais</br>
 •    Documentação completa e detalhada ao final do projeto;
 •    Testes de Performance do Banco;
 •    Relatórios de Desempenho do Projeto e Equipe;
 •    Diagramas e Modelo Relacional;
 
-##4. Diagrama e Modelo Relacional</br></br>
+# 4. Diagrama e Modelo Relacional</br></br>
 
  ![alt text](https://cdn.discordapp.com/attachments/823696595077562389/832814542856781844/diagrama.png)
 </br></br>
 
-##5. Equipe</br></br>
+# 5. Equipe</br></br>
 Daniel Bolognesi | Scrum Developer</br>
 Fernanda Salles | Product Owner </br>
 Gabriel Angelo | Scrum Developer</br>
