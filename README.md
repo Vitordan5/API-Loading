@@ -21,7 +21,7 @@
 O projeto consiste na criação de uma plataforma web simples, manutenível e versátil para busca de candidatos e vagas de emprego, com foco na otimização na seleção de candidatos.
 </br></br>
 ## 1.2 Evolução e Desenvolvimento do Projeto</br>
-É possível nesta planilha encontrar os detalhes do desenvolvimento do projeto, esforço e prioridade das atividades, bem como a data de conclusão.
+É possível nesta planilha <a href=“https://docs.google.com/spreadsheets/d/1oPrPYoXgREKfiF_dP-chRa9e6AbuhQDWhevwqUebuo0/edit?usp“>PLANILHA</a> encontrar os detalhes do desenvolvimento do projeto, esforço e prioridade das atividades, bem como a data de conclusão.
 </br></br>
 ## 1.3 Tecnologias Utilizadas</br>
 •    Python 3.9</br>
