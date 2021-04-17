@@ -36,7 +36,7 @@ O projeto consiste na criação de uma plataforma web simples, manutenível e ve
 
 </br>
 
-# 3. Requisitos</br></br>
+# 3. Requisitos</br>
 ## 3.1 Requisitos Funcionais</br>
 •    Definir filtros personalizados para busca de candidatos e vagas;</br>
 •    Visualização resumida e/ou completa dos candidatos e vagas;</br>
