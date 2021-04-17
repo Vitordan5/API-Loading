@@ -50,7 +50,7 @@ O projeto consiste na criação de uma plataforma web simples, manutenível e ve
 •    Relatórios de Desempenho do Projeto e Equipe;</br>
 •    Diagramas e Modelo Relacional;</br></br>
 
-# 4. Diagrama e Modelo Relacional</br></br>
+# 4. Diagrama e Modelo Relacional</br>
 
  ![alt text](https://cdn.discordapp.com/attachments/823696595077562389/832814542856781844/diagrama.png)
 </br></br>
