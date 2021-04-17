@@ -3,21 +3,21 @@
 ## Menu
 
 <!--ts-->
-   * [VISÃO DO PROJETO](###Visão do Projeto)
-   * [EVOLUÇÃO E DESENVOLVIMENTO DO PROJETO](## 1.2 Evolução e Desenvolvimento do Projeto)
-   * [TECNOLOGIAS UTILIZADAS](## 1.3 Tecnologias Utilizadas)
-   * [REQUISITOS](## 3. Requisitos)
-   * [REQUISITOS FUNCIONAIS](## 3.1 Requisitos Funcionais)
-   * [REQUISITOS NÃO FUNCIONAIS](## 3.2 Requisitos Não Funcionais)
-   * [DIAGRAMA E MODELO RELACIONAL](## 4. Diagrama e Modelo Relacional)
-   * [EQUIPE](## 5. Equipe)
+   * [VISÃO DO PROJETO](###1.1Visão-do-Projeto)
+   * [EVOLUÇÃO E DESENVOLVIMENTO DO PROJETO](###1.2-Evolução-e-Desenvolvimento-do-Projeto)
+   * [TECNOLOGIAS UTILIZADAS](###1.3-Tecnologias-Utilizadas)
+   * [REQUISITOS](###3.-Requisitos)
+   * [REQUISITOS FUNCIONAIS](###3.1-Requisitos-Funcionais)
+   * [REQUISITOS NÃO FUNCIONAIS](###3.2-Requisitos-Não-Funcionais)
+   * [DIAGRAMA E MODELO RELACIONAL](###4.-Diagrama-e-Modelo-Relacional)
+   * [EQUIPE](###5.-Equipe)
   
 <!--te-->
 
 
 # 1. Apresentação do Projeto</br>
 
-## 1.1. Visão do Projeto</br>
+## 1.1 Visão do Projeto</br>
 O projeto consiste na criação de uma plataforma web simples, manutenível e versátil para busca de candidatos e vagas de emprego, com foco na otimização na seleção de candidatos.
 </br></br>
 ## 1.2 Evolução e Desenvolvimento do Projeto</br>
