@@ -3,63 +3,62 @@
 ## Menu
 
 <!--ts-->
-   * [VISÃO DO PROJETO](###1.1Visão-do-Projeto)
-   * [EVOLUÇÃO E DESENVOLVIMENTO DO PROJETO](###1.2-Evolução-e-Desenvolvimento-do-Projeto)
-   * [TECNOLOGIAS UTILIZADAS](###1.3-Tecnologias-Utilizadas)
-   * [REQUISITOS](###3.-Requisitos)
-   * [REQUISITOS FUNCIONAIS](###3.1-Requisitos-Funcionais)
-   * [REQUISITOS NÃO FUNCIONAIS](###3.2-Requisitos-Não-Funcionais)
-   * [DIAGRAMA E MODELO RELACIONAL](###4.-Diagrama-e-Modelo-Relacional)
-   * [EQUIPE](###5.-Equipe)
+   * [VISÃO DO PROJETO](### Visão-do-Projeto)
+   * [TECNOLOGIAS UTILIZADAS](### Tecnologias-Utilizadas)
+   * [REQUISITOS](### Requisitos)
+   * [REQUISITOS FUNCIONAIS](### Requisitos-Funcionais)
+   * [REQUISITOS NÃO FUNCIONAIS](### Requisitos-Não-Funcionais)
+   * [DIAGRAMA E MODELO RELACIONAL](### Diagrama-e-Modelo-Relacional)
+   * [EQUIPE](### Equipe)
   
 <!--te-->
 
 
-# 1. Apresentação do Projeto</br>
+# Apresentação do Projeto</br>
 
-## 1.1 Visão do Projeto</br>
-O projeto consiste na criação de uma plataforma web simples, manutenível e versátil para busca de candidatos e vagas de emprego, com foco na otimização na seleção de candidatos.
+## Visão do Projeto</br>
+O projeto consiste na criação de uma api web simples para busca de candidatos e vagas de emprego, com foco na otimização na seleção de candidatos.
 </br></br>
-## 1.2 Evolução e Desenvolvimento do Projeto</br>
-É possível nesta planilha <a href=“https://docs.google.com/spreadsheets/d/1oPrPYoXgREKfiF_dP-chRa9e6AbuhQDWhevwqUebuo0/edit?usp“>PLANILHA</a> encontrar os detalhes do desenvolvimento do projeto, esforço e prioridade das atividades, bem como a data de conclusão.
-</br></br>
-## 1.3 Tecnologias Utilizadas</br>
+
+## Tecnologias Utilizadas</br>
 •    Python 3.9</br>
-•    Banco de Dados Relacional em MySQL</br>
-•    Git</br>
+•    MySQL</br>
 •    Flask</br>
-•    Bootstrap</br>
 •    Workbench</br>
 •    Postman</br>
 
-# 2. Arquitetura do Projeto</br>
-
-</br>
-
-# 3. Requisitos</br>
-## 3.1 Requisitos Funcionais</br>
-•    Definir filtros personalizados para busca de candidatos e vagas;</br>
+# Requisitos</br>
+## Requisitos Funcionais</br>
+•    Definir filtros personalizados para busca de candidatos ;</br>
 •    Visualização resumida e/ou completa dos candidatos e vagas;</br>
 •    Submissão de currículos na interface;</br>
-•    Submissão de uma ou mais vagas na interface;</br>
 
-
-## 3.2 Requisitos Não Funcionais</br>
-•    Documentação completa e detalhada ao final do projeto;</br>
-•    Testes de Performance do Banco;</br>
-•    Relatórios de Desempenho do Projeto e Equipe;</br>
+## Requisitos Não Funcionais</br>
+•    Documentação do projeto;</br>
 •    Diagramas e Modelo Relacional;</br></br>
 
-# 4. Diagrama e Modelo Relacional</br>
+|  ROTA EXEMPLO | METHOD | RESPOSTA |
+|--------|----------|----------|
+| "/candidatos" ; "/vagas" ; "/user" | "GET" | Listar objeto requisitado  |
+| "/candidato/<id>" ; "/vagas/<id>" ; "/user/<id>" | "GET" | Overview do objeto requisitado  |
+| "/candidato" ; "/user" ; "/vaga" | "POST" | Cadastrar do objeto |
+| "/candidato" ; "/user" ; "/vaga" | "DELETE" | Deletar do objeto |
+| "/candidato" ; "/user" ; "/vaga" | "PUT" | Atualizar do objeto |  
 
- ![alt text](https://cdn.discordapp.com/attachments/823696595077562389/832814542856781844/diagrama.png)
+
+# Backlog</br>
+Sprint 0 - Aplicação onde é possivel ser feito busca dos candidatos e filtrá-los pelos parâmetros: PCD, dependentes, gênero, idioma e nivel de escolaridade.
+Sprint 1 - Desenvolvimento das rotas de CRUD (usuários, vagas e candidatos) e rot e 
+
+# Diagrama e Modelo Relacional</br>
+ ![alt text](https://github.com/Vitordan5/API-Loading/blob/main/gifs/ModeloBanco.JPG)
 </br></br>
 
-# 5. Equipe</br>
-Daniel Bolognesi | Scrum Developer</br>
-Fernanda Salles | Product Owner </br>
-Gabriel Angelo | Scrum Developer</br>
-Isis Moraes | Scrum Developer</br>
-Igor Augusto | Scrum Developer</br>
-Nathan Nascimento | Scrum Developer</br>
-Vitor Silva | Scrum Master</br>
+# Equipe</br>
+Daniel Bolognesi </br>
+Fernanda Salles </br>
+Gabriel Angelo </br>
+Isis Moraes </br>
+Igor Augusto </br>
+Nathan Nascimento </br>
+Vitor Silva </br>
