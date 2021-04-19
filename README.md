@@ -1,56 +1,65 @@
 # API-Loading
 
-Aplicação desenvolvida para seleção de candidatos através da compatibilidade com critérios
+## Menu
 
-## Tabela de conteúdos
-=================
 <!--ts-->
-   * [Sobre](###Sobre)
-   * [Como usar](###Como-usar)
-   * [Instalação](###Instalacao)
-   * [Tecnologias](###Tecnologias)
-   * [Contribuintes](###Contribuintes)
+   * [VISÃO DO PROJETO](###1.1Visão-do-Projeto)
+   * [EVOLUÇÃO E DESENVOLVIMENTO DO PROJETO](###1.2-Evolução-e-Desenvolvimento-do-Projeto)
+   * [TECNOLOGIAS UTILIZADAS](###1.3-Tecnologias-Utilizadas)
+   * [REQUISITOS](###3.-Requisitos)
+   * [REQUISITOS FUNCIONAIS](###3.1-Requisitos-Funcionais)
+   * [REQUISITOS NÃO FUNCIONAIS](###3.2-Requisitos-Não-Funcionais)
+   * [DIAGRAMA E MODELO RELACIONAL](###4.-Diagrama-e-Modelo-Relacional)
+   * [EQUIPE](###5.-Equipe)
+  
 <!--te-->
 
-### Sobre
 
-> O projeto consiste a criação de uma plataforma para otimizar a seleção de candidatos.
+# 1. Apresentação do Projeto</br>
 
-A construção será através de uma plataforma web que auxilie o usuário a definir a suas próximas contratações dentro do banco de dados através dos parâmetros: idade, localidade, gênero, idioma, habilidades, PCD, dependentes, setor de atuação e nivel de escolaridade;
+## 1.1 Visão do Projeto</br>
+O projeto consiste na criação de uma plataforma web simples, manutenível e versátil para busca de candidatos e vagas de emprego, com foco na otimização na seleção de candidatos.
+</br></br>
+## 1.2 Evolução e Desenvolvimento do Projeto</br>
+É possível nesta planilha <a href=“https://docs.google.com/spreadsheets/d/1oPrPYoXgREKfiF_dP-chRa9e6AbuhQDWhevwqUebuo0/edit?usp“>PLANILHA</a> encontrar os detalhes do desenvolvimento do projeto, esforço e prioridade das atividades, bem como a data de conclusão.
+</br></br>
+## 1.3 Tecnologias Utilizadas</br>
+•    Python 3.9</br>
+•    Banco de Dados Relacional em MySQL</br>
+•    Git</br>
+•    Flask</br>
+•    Bootstrap</br>
+•    Workbench</br>
+•    Postman</br>
 
-### Como Usar
+# 2. Arquitetura do Projeto</br>
 
-O cliente pode fazer uma pesquisa de possíveis candidatos de filtros otimizados.
+</br>
 
-### Instalação
+# 3. Requisitos</br>
+## 3.1 Requisitos Funcionais</br>
+•    Definir filtros personalizados para busca de candidatos e vagas;</br>
+•    Visualização resumida e/ou completa dos candidatos e vagas;</br>
+•    Submissão de currículos na interface;</br>
+•    Submissão de uma ou mais vagas na interface;</br>
 
-A implementação do projeto será necessário o usuário ter instalado Python na versão 3.9 ou superior, assim como instalar as frameworks:
 
-  pip install flask
-  pip install flask_mysqldb
-  pip install request
-  
-Após realizar o clone do projeto em sua maquina, execute o Script "cdd.sql" no Mysql para criar o banco, tabelas, clounas e inserir alguns dados. É necessário criar uma conexão com o banco local, foi utilizado a porta 3306 padrão da instalão. Caso seu banco possua uma senha, fazer a alteração no arquivo "app.py" na configuração de password:
- 
- ![1](https://github.com/Vitordan5/API-Loading/blob/main/gifs/1.png)
+## 3.2 Requisitos Não Funcionais</br>
+•    Documentação completa e detalhada ao final do projeto;</br>
+•    Testes de Performance do Banco;</br>
+•    Relatórios de Desempenho do Projeto e Equipe;</br>
+•    Diagramas e Modelo Relacional;</br></br>
 
-Após importar as bibliotecas abra o arquivo "app.py" na IDE e execute a aplicação:
+# 4. Diagrama e Modelo Relacional</br>
 
-![2](https://github.com/Vitordan5/API-Loading/blob/main/gifs/2.gif)
+ ![alt text](https://cdn.discordapp.com/attachments/823696595077562389/832814542856781844/diagrama.png)
+</br></br>
 
-A aplicação irá abrir uma guia no seu navegador padrão:
-
-![3](https://github.com/Vitordan5/API-Loading/blob/main/gifs/3.gif)
-
-### Tecnologias
-* Python 3.9.2 
-* MySQL
-* Flask
-* Bootstrap
-
-### Contribuintes
-* [<img src="https://avatars.githubusercontent.com/u/53946335?s=400&v=4" width=60><br><sub>Daniel Bolognesi</sub>](https://github.com/yaybolognesi)
-* [<img src="https://avatars.githubusercontent.com/u/55774508?s=400&u=976ce0c58ffb78a832f85cde22b11d2ff9147a1c&v=4" width=60><br><sub>Fernanda Salles</sub>](https://github.com/ferpsalles)
-* [<img src="https://avatars.githubusercontent.com/u/73532594?s=400&u=1f8b9362464a88d2551ce0081fe39504709ee0ea&v=4" width=60><br><sub>Gabriel Angelo</sub>](https://github.com/angelog)
-* [<img src="https://avatars.githubusercontent.com/u/19509794?s=400&u=c8e3b179223f4af7ed84b484ba70d6377f116c8f&v=4" width=60><br><sub>Nathan Nascimento</sub>](https://github.com/N4htan)
-* [<img src="https://avatars.githubusercontent.com/u/55815066?s=400&u=40d9563310eb45bc3daaa829ed56e81758606a2f&v=4" width=60><br><sub>Vitor Silva</sub>](https://github.com/Vitordan5)
+# 5. Equipe</br>
+Daniel Bolognesi | Scrum Developer</br>
+Fernanda Salles | Product Owner </br>
+Gabriel Angelo | Scrum Developer</br>
+Isis Moraes | Scrum Developer</br>
+Igor Augusto | Scrum Developer</br>
+Nathan Nascimento | Scrum Developer</br>
+Vitor Silva | Scrum Master</br>
