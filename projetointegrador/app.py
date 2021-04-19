@@ -160,7 +160,7 @@ def updateVaga(id,nomeVaga,idiomaVaga,pcdVaga,dependenteVaga,conhecimentoVaga,se
     return {"status": "Vaga atualizada"}
 #==============================================================================================
 #listar usuarios
-@app.route("/user", methods=["GET"])
+@app.route("/users", methods=["GET"])
 def showusuarios():
     cursor = mysql.connection.cursor()
     query = "SELECT * from usuario "
@@ -170,7 +170,7 @@ def showusuarios():
     return jsonify(numrows=numrows,result=result)
 #==============================================================================================
 #Cadastra usuario
-@app.route("/cadastro/user", methods=["POST"])
+@app.route("/user", methods=["POST"])
 def insertUser():
     body = request.get_json()
     Usuario = createUser(body["login"],body["senha"])
