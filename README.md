@@ -2,18 +2,6 @@
 
 ## Menu
 
-<!--ts-->
-   * [VISÃO DO PROJETO](## Visão-do-Projeto)
-   * [TECNOLOGIAS UTILIZADAS](## Tecnologias-Utilizadas)
-   * [REQUISITOS](# Requisitos)
-   * [REQUISITOS FUNCIONAIS](## Requisitos-Funcionais)
-   * [REQUISITOS NÃO FUNCIONAIS](## Requisitos-Não-Funcionais)
-   * [DIAGRAMA E MODELO RELACIONAL](# Diagrama-e-Modelo-Relacional)
-   * [EQUIPE](# Equipe)
-  
-<!--te-->
-
-
 # Apresentação do Projeto</br>
 
 ## Visão do Projeto</br>
@@ -47,8 +35,8 @@ O projeto consiste na criação de uma api web simples para busca de candidatos 
 
 
 # Backlog</br>
-• Sprint 0 - Aplicação onde é possivel ser feito busca dos candidatos e filtrá-los pelos parâmetros: PCD, dependentes, gênero, idioma e nivel de escolaridade.
-• Sprint 1 - Desenvolvimento das rotas de CRUD (usuários, vagas e candidatos) e rot e 
+• Sprint 0 - Aplicação onde é possivel ser feito busca dos candidatos e filtrá-los pelos parâmetros: PCD, dependentes, gênero, idioma e nivel de escolaridade.</br>
+• Sprint 1 - Desenvolvimento das rotas de CRUD (usuários, vagas e candidatos) e rotas das listas.</br>
 
 # Diagrama e Modelo Relacional</br>
  ![alt text](https://github.com/Vitordan5/API-Loading/blob/main/gifs/ModeloBanco.JPG)
