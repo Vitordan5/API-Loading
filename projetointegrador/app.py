@@ -83,7 +83,7 @@ def createCandidato(nome,cpf,idade,email,genero,pcd,dependentes,cep,telres,telce
     return {"nome":nome,"status":"Candidato cadastrado",}
 
 #Deletar candidato
-@app.route("/dropCandidato/<id>", methods=["DELETE"])
+@app.route("/candidato/<id>", methods=["DELETE"])
 def dropCandidatos(id):
     cursor = mysql.connection.cursor()
     query = "DELETE FROM candidato WHERE idCandidato='{}'".format(id)
