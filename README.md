@@ -46,10 +46,8 @@ O projeto consiste na criação de uma api web simples para busca de candidatos 
 | "/candidato" ; "/user" ; "/vaga" | "POST" | Cadastrar do objeto |
 | "/candidato" ; "/user" ; "/vaga" | "DELETE" | Deletar do objeto |
 | "/candidato" ; "/user" ; "/vaga" | "PUT" | Atualizar do objeto | 
- |"/candidato/gender=<genero>" | "GET "| Lista de candidatos filtrada |
-| "/pcd=<pcd>" | "GET "| Lista de candidatos filtrada |
- | "/dep=<dependentes>" | "GET "| Lista de candidatos filtrada |
-  | "/nivel=<nivelEscolaridade>" "GET "| Lista de candidatos filtrada |
+|""/candidato/gender=<genero>/pcd=<pcd>/dep=<dependentes>/nivel=<nivelEscolaridade>" |"GET" | Lista de candidatos filtrada|
+
 
 # Backlog</br> <a name="-backlog"/></a>
 - Sprint 0 - Aplicação onde é possivel ser feito busca dos candidatos e filtrá-los pelos parâmetros: PCD, dependentes, gênero, idioma e nivel de escolaridade.</br>
