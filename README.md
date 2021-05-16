@@ -38,7 +38,7 @@ O projeto consiste na criação de uma api web simples para busca de candidatos 
  > Como rodar a aplicação:
  
  1. Criar um database mydb no banco de dados
- 2. Alterar a senha do banco de dados no arquivo app.py e main.py 
+ 2. Alterar as configurações do banco de dados
  3. Rodar arquivo app.py
  4. Postman: atribuir a rota desejada, com o respectivo método.
  
@@ -88,7 +88,7 @@ O projeto consiste na criação de uma api web simples para busca de candidatos 
 - [x] Melhorias na documentação do projeto 
 
 * **SPRINT 2 - 16-05** 
-- [x] Melhorias na arquitetura - atribuição do padrão Facade 
+- [x] Melhorias na arquitetura 
 - [x] Reestruturação do banco de dados - adicionar colunas na otimização de filtro de localização 
 - [x] Desenvolvimento de rotas de filtros otimizados e ordenados: localização, nivel de escolaridade, pcd, idioma  
 
@@ -98,6 +98,9 @@ O projeto consiste na criação de uma api web simples para busca de candidatos 
 - [ ] Otimização do filtro de vaga - trazer como resultado candidatos 
 - [ ] Documentação de implementação do projeto 
 
+# Arquitetura do Projeto <a name="-arquitetura"/></a>
+![alt text](https://github.com/Vitordan5/API-Loading/blob/main/gifs/arquitetura.jpeg)
+</br></br>
 
 
 # Diagrama e Modelo Relacional</br> <a name="-diagrama"/></a>
