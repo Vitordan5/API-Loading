@@ -35,14 +35,15 @@ O projeto consiste na criação de uma api web simples para busca de candidatos 
 
 
 ## Instruções de implementação </br> <a name="-instrucao"/></a>
- > Como rodar a aplicação:
- 
- 1. Criar um database mydb no banco de dados
- 2. Alterar as configurações do banco de dados
- 3. Rodar arquivo app.py
- 4. Postman: atribuir a rota desejada, com o respectivo método.
- 
 
+ > Crie o banco de dados 
+ 1. Utilizar o script SQL que está na pasta "API-Loading/projetointegrador/bd/bd.sql" para ter o modelo do banco.
+ 
+ > Como rodar a aplicação:
+ 1. Alterar as configurações do banco de dados nos arquivos "bd.py" e "app.py"
+ 2. Para <a href=“https://www.youtube.com/watch?v=hA2l0TgaZhM“> configurar e executar o ambiente virtual</a>, a pasta do ambiente virtual criado para este projeto se encontra na pasta "venv" 
+ 4. Com o ambiente virtual ativado execute o arquivo "app.py"
+ 5. Recomendamos que utilize o software <a href=“https://www.postman.com/downloads/“>Postman</a> para testar a rotas disponiveis no projeto.
 
 # Requisitos</br> <a name="-requisitos"/></a>
 ## Requisitos Funcionais</br>
