@@ -37,10 +37,10 @@ O projeto consiste na criação de uma api web simples para busca de candidatos 
 ## Instruções de implementação </br> <a name="-instrucao"/></a>
  > Como rodar a aplicação:
  
- 1- Criar um database mydb no banco de dados
- 2- Alterar a senha do banco de dados no arquivo app.py e main.py 
- 3- Rodar arquivo app.py 
- 4- Postman: atribuir a rota desejada, com o respectivo método.
+ 1. Criar um database mydb no banco de dados
+ 2. Alterar a senha do banco de dados no arquivo app.py e main.py 
+ 3. Rodar arquivo app.py
+ 4. Postman: atribuir a rota desejada, com o respectivo método.
  
 
 
