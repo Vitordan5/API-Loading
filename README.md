@@ -93,7 +93,6 @@ O projeto consiste na criação de uma api web simples para busca de candidatos 
 - [x] Desenvolvimento de rotas de filtros otimizados e ordenados: localização, nivel de escolaridade, pcd, idioma  
 
 * **SPRINT 3 - 05-06** 
-- [ ] Melhorias na arquitetura - atribuição do padrão Facade
 - [ ] Otimização do filtro nivel de escolaridade 
 - [ ] Otimização do filtro de vaga - trazer como resultado candidatos 
 - [ ] Documentação de implementação do projeto 
