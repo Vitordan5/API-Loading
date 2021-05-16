@@ -69,7 +69,8 @@ O projeto consiste na criação de uma api web simples para busca de candidatos 
 | "/candidato" ; "/user" ; "/vaga" | "DELETE" | Deletar do objeto |
 | "/candidato" ; "/user" ; "/vaga" | "PUT" | Atualizar do objeto | 
    
-| ROTAS FILTROS | METHOD | RESPOSTA
+| ROTAS FILTROS | METHOD | RESPOSTA |
+|--------|----------|----------|
 |""/candidato/origem=<cep>/pcd=<pcd>/idioma=<idioma>/nivel=<nivelEscolaridade>/order=<order>" |"GET" | Lista de candidatos filtrada|
 
 
@@ -103,7 +104,7 @@ O projeto consiste na criação de uma api web simples para busca de candidatos 
 
 
 # Diagrama e Modelo Relacional</br> <a name="-diagrama"/></a>
- ![alt text](https://github.com/Vitordan5/API-Loading/blob/main/gifs/eer.png)
+ ![alt text](https://github.com/Vitordan5/API-Loading/blob/main/gifs/EER.png)
 </br></br>
 
 # Equipe</br> <a name="-equipe"/></a>
