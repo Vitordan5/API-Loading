@@ -41,9 +41,9 @@ O projeto consiste na criação de uma api web simples para busca de candidatos 
  
  > Como rodar a aplicação:
  1. Alterar as configurações do banco de dados nos arquivos "bd.py" e "app.py"
- 2. Para <a href=“https://www.youtube.com/watch?v=hA2l0TgaZhM“> configurar e executar o ambiente virtual</a>, a pasta do ambiente virtual criado para este projeto se encontra na pasta "venv" 
+ 2. Para [configurar e executar o ambiente virtual](https://www.youtube.com/watch?v=hA2l0TgaZhM), a pasta do ambiente virtual criado para este projeto se encontra na pasta "venv" 
  4. Com o ambiente virtual ativado execute o arquivo "app.py"
- 5. Recomendamos que utilize o software <a href=“https://www.postman.com/downloads/“>Postman</a> para testar a rotas disponiveis no projeto.
+ 5. Recomendamos que utilize o software [Postman](https://www.postman.com/downloads/) para testar a rotas disponiveis no projeto.
 
 # Requisitos</br> <a name="-requisitos"/></a>
 ## Requisitos Funcionais</br>
