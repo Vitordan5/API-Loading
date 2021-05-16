@@ -71,7 +71,7 @@ O projeto consiste na criação de uma api web simples para busca de candidatos 
    
 | ROTAS FILTROS | METHOD | RESPOSTA |
 |--------|----------|----------|
-|""/candidato/origem=<cep>/pcd=<pcd>/idioma=<idioma>/nivel=<nivelEscolaridade>/order=<order>" |"GET" | Lista de candidatos filtrada|
+|"/filterCandidato/cep=<cep>" |"GET" | Lista de candidatos filtrada|
 
 
 # Backlog</br> <a name="-backlog"/></a>
