@@ -76,23 +76,23 @@ O projeto consiste na criação de uma api web simples para busca de candidatos 
 
 # Backlog</br> <a name="-backlog"/></a>
 
-* SPRINT 0 - 28/03 
+* **SPRINT 0 - 28/03**
 
 - [x] Modelo do banco: Modelo Lógica e Física 
 - [x] Interface para filtros 
 - [x] Parametrização dos filtros: PCD, dependentes, gênero, idioma e nivel de escolaridade
 
-* SPRINT 1  -  18-04 
+* **SPRINT 1  -  18-04** 
 - [x] Desenvolvimento das rotas de CRUD (usuários, vagas e candidatos) 
 - [x] Desenvolvimento dos indices no banco de dados - otimização de performance no banco de dados 
 - [x] Melhorias na documentação do projeto 
 
-* SPRINT 2 - 16-05 
+* **SPRINT 2 - 16-05** 
 - [x] Melhorias na arquitetura - atribuição do padrão Facade 
 - [x] Reestruturação do banco de dados - adicionar colunas na otimização de filtro de localização 
 - [x] Desenvolvimento de rotas de filtros otimizados e ordenados: localização, nivel de escolaridade, pcd, idioma  
 
-* SPRINT 3 - 05-06 
+* **SPRINT 3 - 05-06** 
 - [ ] Melhorias na arquitetura - atribuição do padrão Facade
 - [ ] Otimização do filtro nivel de escolaridade 
 - [ ] Otimização do filtro de vaga - trazer como resultado candidatos 
