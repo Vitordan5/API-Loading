@@ -1,5 +1,5 @@
 from db import DatabaseManager
-from flask import Flask,jsonify, request
+from flask import jsonify
 
 class CandidatoDatabase:
     def insertCandidato(self,vars):
@@ -21,7 +21,8 @@ class CandidatoDatabase:
         database.Insert_Drop(query)
 
     def filtrarCandidato(self,latuser,longuser,vars):
-        query="select candidato.nomeCandidato,candidato.emailCandidato,(6371 * acos(cos(radians(@latempresa)) * cos(radians(candidato.latitudeCandidato)) * cos(radians(@lonempresa) - radians(candidato.longitudeCandidato)) + sin(radians(@latempresa)) * sin(radians(candidato.latitudeCandidato)) )) AS distance from candidato".format(latuser,longuser,latuser)
+        print(latuser[0])
+        query="select candidato.nomeCandidato,candidato.emailCandidato,(6371 * acos(cos(radians({})) * cos(radians(candidato.latitudeCandidato)) * cos(radians({}) - radians(candidato.longitudeCandidato)) + sin(radians({})) * sin(radians(candidato.latitudeCandidato)) )) AS distance from candidato".format(latuser[0],longuser[0],latuser[0])
         for x in vars:
             if x == "conhecimento":
                 query = query + " inner join conhecimento on conhecimento.descConhecimento = '{}' inner join candidato_conhecimento on candidato_conhecimento.idCandidato = candidato.idCandidato and candidato_conhecimento.idConhecimento = conhecimento.idConhecimento".format(vars[x])
@@ -52,4 +53,5 @@ class CandidatoDatabase:
                 
         database = DatabaseManager()
         result = database.Filtrar(query)
+        print(result)
         return jsonify(result=result)
