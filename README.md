@@ -95,6 +95,7 @@ O projeto consiste na criação de uma api web simples para busca de candidatos 
 
 | SPRINT 3 - 05-06 |
 |-------------------------------------------------------------------------------------------|
+| Melhorias na arquitetura - atribuição do padrão Facade |
 | Otimização do filtro nivel de escolaridade |
 | Otimização do filtro de vaga - trazer como resultado candidatos |
 | Documentação de implementação do projeto |
@@ -102,7 +103,7 @@ O projeto consiste na criação de uma api web simples para busca de candidatos 
 
 
 # Diagrama e Modelo Relacional</br> <a name="-diagrama"/></a>
- ![alt text](https://github.com/Vitordan5/API-Loading/blob/main/gifs/ModeloBanco.JPG)
+ ![alt text](https://github.com/Vitordan5/API-Loading/blob/main/gifs/eer.png)
 </br></br>
 
 # Equipe</br> <a name="-equipe"/></a>
