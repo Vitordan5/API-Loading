@@ -2,19 +2,19 @@ create database mydb;
 use mydb;
 
 CREATE TABLE IF NOT exists candidato (
-    idCandidato INT AUTO_INCREMENT,
+    idCandidato INT UNIQUE AUTO_INCREMENT,
     nomeCandidato VARCHAR(100) NOT NULL,
-    cpfCandidato VARCHAR(11) NOT NULL UNIQUE,
+    cpfCandidato VARCHAR(11) NOT NULL,
     dataNascimentoCandidato DATE NOT NULL,
     emailCandidato VARCHAR(100) NOT NULL UNIQUE,
     pcdCandidato TINYINT NOT NULL,
     cepCandidato VARCHAR(8) NOT NULL,
     latitudeCandidato FLOAT(10,7),
     longitudeCandidato FLOAT(10,7),
-    telResCandidato VARCHAR(10) NOT NULL,
-    telCelCandidato VARCHAR(11) NOT NULL,
-    nivelEscolaridade ENUM('sem escolaridade','tecnico','medio completo','ensino superior','pos graduado'),
-    PRIMARY KEY (idCandidato),
+    telResCandidato VARCHAR(12) NOT NULL,
+    telCelCandidato VARCHAR(12) NOT NULL,
+    nivelEscolaridade ENUM('Sem Escolaridade','Tecnico','Medio Completo','Ensino Superior','Pos Graduado'),
+    PRIMARY KEY (cpfCandidato),
     INDEX (latitudeCandidato ASC),
     INDEX (longitudeCandidato ASC)
 );
@@ -23,12 +23,12 @@ CREATE TABLE IF NOT exists experiencia_profissional (
     idExpProf INT AUTO_INCREMENT,
     empresa VARCHAR(50) NOT NULL,
     cargo VARCHAR(50) NOT NULL,
-    idCandidato INT NOT NULL,
+    cpfCandidato VARCHAR(11) NOT NULL,
     tempo INT NOT NULL,
     PRIMARY KEY (idExpProf),
-    FOREIGN KEY (idCandidato)
-        REFERENCES candidato (idCandidato),
-    INDEX (idCandidato ASC)
+    FOREIGN KEY (cpfCandidato)
+        REFERENCES candidato (cpfCandidato) ON DELETE CASCADE,
+    INDEX (cpfCandidato ASC)
 );
 
 CREATE TABLE IF NOT exists idioma (
@@ -47,18 +47,18 @@ CREATE TABLE IF NOT exists conhecimento (
 
 CREATE TABLE IF NOT exists candidato_idioma (
     idIdioma INT AUTO_INCREMENT,
-    idCandidato INT NOT NULL,
-    FOREIGN KEY (idCandidato)
-        REFERENCES candidato (idCandidato),
+    cpfCandidato VARCHAR(11) NOT NULL,
+    FOREIGN KEY (cpfCandidato)
+        REFERENCES candidato (cpfCandidato) ON DELETE CASCADE,
 	FOREIGN KEY (idIdioma)
         REFERENCES idioma (idIdioma)
 );
 
 CREATE TABLE IF NOT exists candidato_conhecimento (
     idConhecimento INT AUTO_INCREMENT,
-    idCandidato INT NOT NULL,
-    FOREIGN KEY (idCandidato)
-        REFERENCES candidato (idCandidato),
+    cpfCandidato VARCHAR(11) NOT NULL,
+    FOREIGN KEY (cpfCandidato)
+        REFERENCES candidato (cpfCandidato) ON DELETE CASCADE,
 	FOREIGN KEY (idConhecimento)
         REFERENCES conhecimento (idConhecimento)
 );

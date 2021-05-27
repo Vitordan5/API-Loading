@@ -2,21 +2,33 @@ from db import DatabaseManager
 from flask import jsonify
 
 class CandidatoDatabase:
-    def insertCandidato(self,vars):
-       
-        where = []
-        for c in vars:
-            item = "'{}'".format(vars[c])
-            where.append(item)
-
-        where = ','.join(where)
-        query="INSERT INTO candidato (nomeCandidato, cpfCandidato, dataNascimentoCandidato, emailCandidato, pcdCandidato, cepCandidato, latitudeCandidato, longitudeCandidato, telResCandidato, telCelCandidato, nivelEscolaridade) VALUES ({})".format(where)
+    def insertCandidato(self, lat, long, vars):
         database = DatabaseManager()
+        
+        query="INSERT INTO candidato (nomeCandidato, cpfCandidato, dataNascimentoCandidato, emailCandidato, pcdCandidato, cepCandidato, latitudeCandidato, longitudeCandidato, telResCandidato, telCelCandidato, nivelEscolaridade) VALUES ('{}', '{}', {}, '{}', {}, {}, {}, {}, {}, {}, '{}')".format(vars["nomeCandidato"], vars["cpfCandidato"], vars["dataNascimentoCandidato"], vars["emailCandidato"], vars["pcdCandidato"], vars["cepCandidato"], lat, long, vars["telResCandidato"], vars["telCelCandidato"], vars["nivelEsc"])
+        print(query)
         database.Insert_Drop(query)
+        
+        for c in vars:
+            if c == "conhecimento":
+                query ="INSERT INTO candidato_conhecimento (idConhecimento, cpfCandidato) VALUES ({}, {})".format(vars[c], vars["cpfCandidato"])
+                database.Insert_Drop(query)
+
+        for c in vars:
+            if c == "idioma":
+                query ="INSERT INTO candidato_idioma (idIdioma, cpfCandidato) VALUES ({}, {})".format(vars[c], vars["cpfCandidato"])
+                database.Insert_Drop(query)
+
+        for c in vars:
+            if c == "experiencia":
+                if c == vars[c]:
+                    query ="INSERT INTO experiencia_profissional (empresa, cargo, cpfCandidato, tempo) VALUES ('{}', '{}', {}, {})".format(vars["empresa"], vars["cargo"], vars["cpfCandidato"], vars["tempo"])
+                    database.Insert_Drop(query)
+
         return True
 
-    def dropCandidato (self,id):
-        query = "DELETE FROM candidato WHERE idCandidato = '{}'".format(id)
+    def dropCandidato (self,cpf):
+        query = "DELETE FROM candidato WHERE cpfCandidato = '{}'".format(cpf)
         database = DatabaseManager()
         database.Insert_Drop(query)
 

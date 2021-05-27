@@ -21,12 +21,15 @@ class Usuario:
         vaga.insertVaga(vars)
 
     def insertCandidato(vars):
+        buscep= cepCoord(vars["cepCandidato"])
+        lat = buscep[0]
+        long = buscep[1]
         candidato = CandidatoDatabase()
-        candidato.insertCandidato(vars)
+        candidato.insertCandidato(lat, long, vars)
 
-    def dropCandidato(id):
+    def dropCandidato(cpf):
         candidato = CandidatoDatabase()
-        candidato.dropCandidato(id)
+        candidato.dropCandidato(cpf)
 
     def filtrarCandidato(cep,vars):
         buscep= cepCoord(cep)

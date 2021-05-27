@@ -9,8 +9,8 @@ def cepCoord(cep):
     tx = str(response.json())
 
     valor = ast.literal_eval(tx)
-    lat = [valor['latitude']]
-    long=[valor['longitude']]
+    lat = valor['latitude']
+    long= valor['longitude']
     localizacao=[]
     localizacao.append(lat)
     localizacao.append(long)

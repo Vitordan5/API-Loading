@@ -8,7 +8,7 @@ from db import *
 app = Flask("JETSOFT")
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'root'
+app.config['MYSQL_PASSWORD'] = '1234'
 app.config['MYSQL_DB'] = 'mydb'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 mysql = MySQL(app) 
@@ -32,9 +32,9 @@ def insertcandidato():
     return {"nome":vars['nomeCandidato'],"Status":"inserido com sucesso"}
 
 #EXCLUI CANDIDATO
-@app.route("/dropCandidato/<id>", methods=["DELETE"])
-def dropCandidatos(id):
-    Usuario.dropCandidato(id)
+@app.route("/dropCandidato/<cpf>", methods=["DELETE"])
+def dropCandidatos(cpf):
+    Usuario.dropCandidato(cpf)
     return {"Status":"Excluido com sucesso"}
 
 @app.route("/dropVaga/<id>", methods=["DELETE"])
