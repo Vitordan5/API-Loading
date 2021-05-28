@@ -6,23 +6,24 @@ class CandidatoDatabase:
         database = DatabaseManager()
         
         query="INSERT INTO candidato (nomeCandidato, cpfCandidato, dataNascimentoCandidato, emailCandidato, pcdCandidato, cepCandidato, latitudeCandidato, longitudeCandidato, telResCandidato, telCelCandidato, nivelEscolaridade) VALUES ('{}', '{}', {}, '{}', {}, {}, {}, {}, {}, {}, '{}')".format(vars["nomeCandidato"], vars["cpfCandidato"], vars["dataNascimentoCandidato"], vars["emailCandidato"], vars["pcdCandidato"], vars["cepCandidato"], lat, long, vars["telResCandidato"], vars["telCelCandidato"], vars["nivelEsc"])
-        print(query)
         database.Insert_Drop(query)
         
         for c in vars:
             if c == "conhecimento":
-                query ="INSERT INTO candidato_conhecimento (idConhecimento, cpfCandidato) VALUES ({}, {})".format(vars[c], vars["cpfCandidato"])
-                database.Insert_Drop(query)
+                for i in range(len(vars[c])):
+                    query ="INSERT INTO candidato_conhecimento (idConhecimento, cpfCandidato) VALUES ({}, {})".format(vars[c][i], vars["cpfCandidato"])
+                    database.Insert_Drop(query)
 
         for c in vars:
             if c == "idioma":
-                query ="INSERT INTO candidato_idioma (idIdioma, cpfCandidato) VALUES ({}, {})".format(vars[c], vars["cpfCandidato"])
-                database.Insert_Drop(query)
+                for i in range(len(vars[c])):
+                    query ="INSERT INTO candidato_idioma (idIdioma, cpfCandidato) VALUES ({}, {})".format(vars[c][i], vars["cpfCandidato"])
+                    database.Insert_Drop(query)
 
         for c in vars:
             if c == "experiencia":
-                if c == vars[c]:
-                    query ="INSERT INTO experiencia_profissional (empresa, cargo, cpfCandidato, tempo) VALUES ('{}', '{}', {}, {})".format(vars["empresa"], vars["cargo"], vars["cpfCandidato"], vars["tempo"])
+                for i in range(len(vars[c])):
+                    query ="INSERT INTO experiencia_profissional (empresa, cargo, cpfCandidato, tempo) VALUES ('{}', '{}', {}, {})".format(vars[c][i]["empresa"], vars[c][i]["cargo"], vars["cpfCandidato"], vars[c][i]["tempo"])
                     database.Insert_Drop(query)
 
         return True
