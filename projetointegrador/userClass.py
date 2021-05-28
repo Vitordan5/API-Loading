@@ -38,3 +38,8 @@ class Usuario:
         candidato = CandidatoDatabase()
         result = candidato.filtrarCandidato(lat,long,vars)
         return result
+
+    def updateCandidato(vars, cpf):
+        candidato = CandidatoDatabase()
+        candidato.updateCandidato(vars, cpf)
+

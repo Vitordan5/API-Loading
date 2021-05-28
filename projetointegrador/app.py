@@ -49,4 +49,10 @@ def filterCandidato(cep):
     result = Usuario.filtrarCandidato(cep,vars)
     return result
 
+@app.route("/updateCandidato/<cpf>", methods=["PUT"])
+def updateCandidato(cpf):
+    vars = request.get_json()
+    Usuario.updateCandidato(vars, cpf) 
+    return {"Status":"Atualizado com sucesso"}  
+
 app.run()

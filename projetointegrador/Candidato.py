@@ -68,3 +68,11 @@ class CandidatoDatabase:
         result = database.Filtrar(query)
         print(result)
         return jsonify(result=result)
+
+    def updateCandidato (self, vars, cpf):
+        database = DatabaseManager()
+        for c in vars:
+            if c == "conhecimento":
+                for i in range(len(vars[c])):
+                    query ="INSERT INTO candidato_conhecimento (idConhecimento, cpfCandidato) VALUES ({}, {})".format(vars[c][i], cpf)
+                    database.Insert_Drop(query)
