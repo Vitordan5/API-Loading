@@ -13,46 +13,71 @@ app.config['MYSQL_DB'] = 'mydb'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 mysql = MySQL(app) 
 
+#--------------USUARIO--------------
+
+#INSERT
 @app.route("/insertUsuario", methods=["POST"])
 def teste():
     vars = request.get_json()
     user = Usuario(vars['nome_usuario'], vars['senha'])
     return {"nome":vars['nome_usuario']}
 
+#--------------VAGA--------------
+
+#INSERT
 @app.route("/insertVaga", methods = ["POST"])
 def insertvaga():
     vars = request.get_json()
     Usuario.insertVaga(vars)
     return {"Vaga":vars['nomeVaga'],"Status":"Inserido com sucesso"}
 
+#UPDATE
+@app.route("/updateCandidato/<id>", methods=["PUT"])
+def updateVaga(id):
+    vars = request.get_json()
+    Usuario.updateVaga(vars, id) 
+    return {"Status":"Atualizado com sucesso"}  
+
+#DROP
+@app.route("/dropVaga/<id>", methods=["DELETE"])
+def dropVaga(id):
+    Usuario.dropVaga(id)
+    return {"Status":"Excluido com sucesso"}
+
+#FILTER
+@app.route("/filterVaga/x=<x>",methods=["GET","POST"])
+def filterVaga(x):
+    vars = request.get_json()
+    result = Usuario.filtrarVaga(x,vars)
+    return result
+
+#--------------CANDIDATO--------------
+
+#INSERT
 @app.route("/insertCandidato",methods = ["POST"])
 def insertcandidato():
     vars = request.get_json()
     Usuario.insertCandidato(vars)
     return {"nome":vars['nomeCandidato'],"Status":"inserido com sucesso"}
 
-#EXCLUI CANDIDATO
-@app.route("/dropCandidato/<cpf>", methods=["DELETE"])
-def dropCandidatos(cpf):
-    Usuario.dropCandidato(cpf)
-    return {"Status":"Excluido com sucesso"}
-
-@app.route("/dropVaga/<id>", methods=["DELETE"])
-def dropVaga(id):
-    Usuario.dropVaga(id)
-    return {"Status":"Excluido com sucesso"}
-
-#Filtra candidato
-@app.route("/filterCandidato/cep=<cep>",methods=["GET","POST"])
-def filterCandidato(cep):
-    vars = request.get_json()
-    result = Usuario.filtrarCandidato(cep,vars)
-    return result
-
+#UPDATE
 @app.route("/updateCandidato/<cpf>", methods=["PUT"])
 def updateCandidato(cpf):
     vars = request.get_json()
     Usuario.updateCandidato(vars, cpf) 
     return {"Status":"Atualizado com sucesso"}  
+
+#DROP
+@app.route("/dropCandidato/<cpf>", methods=["DELETE"])
+def dropCandidatos(cpf):
+    Usuario.dropCandidato(cpf)
+    return {"Status":"Excluido com sucesso"}
+
+#FILTER
+@app.route("/filterCandidato/cep=<cep>",methods=["GET","POST"])
+def filterCandidato(cep):
+    vars = request.get_json()
+    result = Usuario.filtrarCandidato(cep,vars)
+    return result
 
 app.run()
