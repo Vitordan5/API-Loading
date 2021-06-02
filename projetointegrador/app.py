@@ -45,10 +45,14 @@ def dropVaga(id):
     return {"Status":"Excluido com sucesso"}
 
 #FILTER
-@app.route("/filterVaga/x=<x>",methods=["GET","POST"])
-def filterVaga(x):
-    vars = request.get_json()
-    result = Usuario.filtrarVaga(x,vars)
+@app.route("/filterVaga/<id>",methods=["GET","POST"])
+def filterVaga(id):
+    result = Usuario.filtrarVaga(id)
+    return result
+
+@app.route("/filterVaga/",methods=["GET","POST"])
+def listaVaga():
+    result = Usuario.filtrarVaga()
     return result
 
 #--------------CANDIDATO--------------

@@ -15,33 +15,22 @@ class VagaDatabase:
         database = DatabaseManager()
         database.Insert_Drop(query)
 
-    def filtrarVaga(self, vars):
-        print
+    def filtrarVaga(self, id):
+        query="select * from vaga where idVaga = {}".format(id)
+        database = DatabaseManager()
+        result = database.Filtrar(query)
+        return jsonify(result=result)
+    
+    def listarVaga(self):
+        query="select * from vaga"
+        database = DatabaseManager()
+        result = database.Filtrar(query)
+        return jsonify(result=result)
 
-    def updateVaga (self, lat, long, vars, id):
+    def updateVaga (self, vars, id):
         database = DatabaseManager()
 
         for c in vars:
-            if c == "nomeVaga":
-                query="UPDATE vaga SET nomeVaga = {} WHERE idVaga = {}".format(vars[c], id)
-                database.Insert_Drop(query)
-
-        for c in vars:
-            if c == "idIdiomaVaga":
-                query="UPDATE vaga SET idIdiomaVaga = {} WHERE idVaga = {}".format(vars[c], id)
-                database.Insert_Drop(query)
-
-        for c in vars:
-            if c == "pcdVaga":
-                query="UPDATE vaga SET pcdVaga = {} WHERE idVaga = {}".format(vars[c], id)
-                database.Insert_Drop(query)
-
-        for c in vars:
-            if c == "cepVaga":
-                query="UPDATE vaga SET cepVaga = {}, latitudeVaga = {}, longitudeVaga = {}  WHERE idVaga = {}".format(vars[c], lat, long, id)
-                database.Insert_Drop(query)
-
-        for c in vars:
-            if c == "nivelEscolaridade":
-                query="UPDATE vaga SET nivelEscolaridade = {} WHERE idVaga = {}".format(vars[c], id)
-                database.Insert_Drop(query)
+            query="UPDATE vaga SET {} = {} WHERE idVaga = {}".format(c,vars[c], id)
+            database.Insert_Drop(query)
+      

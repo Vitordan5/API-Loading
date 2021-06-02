@@ -41,9 +41,14 @@ class Usuario:
         vaga.dropVaga(id)
 
 #FILTER
-    def filtrarVaga(vars):
+    def filtrarVaga(id):
         vaga = VagaDatabase()
-        result = vaga.filtrarVaga(vars)
+        result = vaga.filtrarVaga(id)
+        return result
+
+    def listarVaga():
+        vaga = VagaDatabase()
+        result = vaga.listarVaga()
         return result
 
 #--------------CANDIDATO--------------
