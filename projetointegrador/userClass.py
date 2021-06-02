@@ -29,11 +29,8 @@ class Usuario:
 
 #UPDATE
     def updateVaga(vars, id):
-        buscep= cepCoord(vars["cepVaga"])
-        lat = buscep[0]
-        long = buscep[1]
         vaga = VagaDatabase()
-        vaga.updateVaga(lat, long, vars, id)
+        vaga.updateVaga(vars, id)
 
 #DROP
     def dropVaga(id):

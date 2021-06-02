@@ -31,6 +31,5 @@ class VagaDatabase:
         database = DatabaseManager()
 
         for c in vars:
-            query="UPDATE vaga SET {} = {} WHERE idVaga = {}".format(c,vars[c], id)
+            query="UPDATE vaga SET {} = '{}' WHERE idVaga = {}".format(c , vars[c], id)
             database.Insert_Drop(query)
-      

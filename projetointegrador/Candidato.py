@@ -5,7 +5,7 @@ class CandidatoDatabase:
     def insertCandidato(self, lat, long, vars):
         database = DatabaseManager()
         
-        query="INSERT INTO candidato (nomeCandidato, cpfCandidato, dataNascimentoCandidato, emailCandidato, pcdCandidato, cepCandidato, latitudeCandidato, longitudeCandidato, telResCandidato, telCelCandidato, nivelEscolaridade) VALUES ('{}', '{}', {}, '{}', {}, {}, {}, {}, {}, {}, '{}')".format(vars["nomeCandidato"], vars["cpfCandidato"], vars["dataNascimentoCandidato"], vars["emailCandidato"], vars["pcdCandidato"], vars["cepCandidato"], lat, long, vars["telResCandidato"], vars["telCelCandidato"], vars["nivelEsc"])
+        query="INSERT INTO candidato (nomeCandidato, cpfCandidato, dataNascimentoCandidato, emailCandidato, pcdCandidato, cepCandidato, latitudeCandidato, longitudeCandidato, telResCandidato, telCelCandidato, nivelEscolaridade) VALUES ('{}', '{}', {}, '{}', {}, '{}', {}, {}, {}, {}, '{}')".format(vars["nomeCandidato"], vars["cpfCandidato"], vars["dataNascimentoCandidato"], vars["emailCandidato"], vars["pcdCandidato"], vars["cepCandidato"], lat, long, vars["telResCandidato"], vars["telCelCandidato"], vars["nivelEsc"])
         database.Insert_Drop(query)
         
         for c in vars:
@@ -75,51 +75,51 @@ class CandidatoDatabase:
         for c in vars:
             if c == "conhecimento":
                 for i in range(len(vars[c])):
-                    query ="INSERT INTO candidato_conhecimento (idConhecimento, cpfCandidato) VALUES ({}, {})".format(vars[c][i], cpf)
+                    query ="INSERT INTO candidato_conhecimento (idConhecimento, cpfCandidato) VALUES ({}, '{}')".format(vars[c][i], cpf)
                     database.Insert_Drop(query)
 
         for c in vars:
             if c == "idioma":
                 for i in range(len(vars[c])):
-                    query ="INSERT INTO candidato_idioma (idIdioma, cpfCandidato) VALUES ({}, {})".format(vars[c][i], vars["cpfCandidato"])
+                    query ="INSERT INTO candidato_idioma (idIdioma, cpfCandidato) VALUES ({}, '{}')".format(vars[c][i], vars["cpfCandidato"])
                     database.Insert_Drop(query)
 
         for c in vars:
             if c == "nomeCandidato":
-                query="UPDATE candidato SET nomeCandidato = {} WHERE cpfCandidato = {}".format(vars[c], cpf)
+                query="UPDATE candidato SET nomeCandidato = '{}' WHERE cpfCandidato = '{}'".format(vars[c], cpf)
                 database.Insert_Drop(query)
 
         for c in vars:
             if c == "dataNascimentoCandidato":
-                query="UPDATE candidato SET dataNascimentoCandidato = {} WHERE cpfCandidato = {}".format(vars[c], cpf)
+                query="UPDATE candidato SET dataNascimentoCandidato = {} WHERE cpfCandidato = '{}'".format(vars[c], cpf)
                 database.Insert_Drop(query)
 
         for c in vars:
             if c == "emailCandidato":
-                query="UPDATE candidato SET emailCandidato = {} WHERE cpfCandidato = {}".format(vars[c], cpf)
+                query="UPDATE candidato SET emailCandidato = '{}' WHERE cpfCandidato = '{}'".format(vars[c], cpf)
                 database.Insert_Drop(query)
 
         for c in vars:
             if c == "pcdCandidato":
-                query="UPDATE candidato SET pcdCandidato = {} WHERE cpfCandidato = {}".format(vars[c], cpf)
+                query="UPDATE candidato SET pcdCandidato = {} WHERE cpfCandidato = '{}'".format(vars[c], cpf)
                 database.Insert_Drop(query)
 
         for c in vars:
             if c == "cepCandidato":
-                query="UPDATE candidato SET cepCandidato = {}, latitudeCandidato = {}, longitudeCandidato = {}  WHERE cpfCandidato = {}".format(vars[c], lat, long, cpf)
+                query="UPDATE candidato SET cepCandidato = '{}', latitudeCandidato = {}, longitudeCandidato = {}  WHERE cpfCandidato = '{}'".format(vars[c], lat, long, cpf)
                 database.Insert_Drop(query)
 
         for c in vars:
             if c == "telResCandidato":
-                query="UPDATE candidato SET telResCandidato = {} WHERE cpfCandidato = {}".format(vars[c], cpf)
+                query="UPDATE candidato SET telResCandidato = '{}' WHERE cpfCandidato = '{}'".format(vars[c], cpf)
                 database.Insert_Drop(query)
 
         for c in vars:
             if c == "telCelCandidato":
-                query="UPDATE candidato SET telCelCandidato = {} WHERE cpfCandidato = {}".format(vars[c], cpf)
+                query="UPDATE candidato SET telCelCandidato = '{}' WHERE cpfCandidato = '{}'".format(vars[c], cpf)
                 database.Insert_Drop(query)
 
         for c in vars:
             if c == "nivelEscolaridade":
-                query="UPDATE candidato SET nivelEscolaridade = {} WHERE cpfCandidato = {}".format(vars[c], cpf)
+                query="UPDATE candidato SET nivelEscolaridade = {} WHERE cpfCandidato = '{}'".format(vars[c], cpf)
                 database.Insert_Drop(query)

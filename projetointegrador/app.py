@@ -50,9 +50,9 @@ def filterVaga(id):
     result = Usuario.filtrarVaga(id)
     return result
 
-@app.route("/filterVaga/",methods=["GET","POST"])
+@app.route("/filterVaga",methods=["GET","POST"])
 def listaVaga():
-    result = Usuario.filtrarVaga()
+    result = Usuario.listarVaga()
     return result
 
 #--------------CANDIDATO--------------
