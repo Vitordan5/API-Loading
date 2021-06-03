@@ -60,11 +60,8 @@ class Usuario:
 
 #UPDATE
     def updateCandidato(vars, cpf):
-        buscep= cepCoord(vars["cepCandidato"])
-        lat = buscep[0]
-        long = buscep[1]
         candidato = CandidatoDatabase()
-        candidato.updateCandidato(lat, long, vars, cpf)
+        candidato.updateCandidato(vars, cpf)
 
 #DROP
     def dropCandidato(cpf):
@@ -78,4 +75,9 @@ class Usuario:
         long = buscep[1]
         candidato = CandidatoDatabase()
         result = candidato.filtrarCandidato(lat,long,vars)
+        return result
+
+    def listaCandidato():
+        candidato = CandidatoDatabase()
+        result = candidato.listaCandidato()
         return result

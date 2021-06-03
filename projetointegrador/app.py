@@ -32,7 +32,7 @@ def insertvaga():
     return {"Vaga":vars['nomeVaga'],"Status":"Inserido com sucesso"}
 
 #UPDATE
-@app.route("/updateCandidato/<id>", methods=["PUT"])
+@app.route("/updateVaga/<id>", methods=["PUT"])
 def updateVaga(id):
     vars = request.get_json()
     Usuario.updateVaga(vars, id) 
@@ -82,6 +82,11 @@ def dropCandidatos(cpf):
 def filterCandidato(cep):
     vars = request.get_json()
     result = Usuario.filtrarCandidato(cep,vars)
+    return result
+
+@app.route("/filterCandidato",methods=["GET"])
+def listaCandidato():
+    result = Usuario.listaCandidato()
     return result
 
 app.run()

@@ -1,7 +1,10 @@
 from db import DatabaseManager
+from cepCoords import cepCoord
 from flask import jsonify
 
 class CandidatoDatabase:
+
+#INSERT
     def insertCandidato(self, lat, long, vars):
         database = DatabaseManager()
         
@@ -11,28 +14,30 @@ class CandidatoDatabase:
         for c in vars:
             if c == "conhecimento":
                 for i in range(len(vars[c])):
-                    query ="INSERT INTO candidato_conhecimento (idConhecimento, cpfCandidato) VALUES ({}, {})".format(vars[c][i], vars["cpfCandidato"])
+                    query ="INSERT INTO candidato_conhecimento (idConhecimento, cpfCandidato) VALUES ({}, '{}')".format(vars[c][i], vars["cpfCandidato"])
                     database.Insert_Drop(query)
 
         for c in vars:
             if c == "idioma":
                 for i in range(len(vars[c])):
-                    query ="INSERT INTO candidato_idioma (idIdioma, cpfCandidato) VALUES ({}, {})".format(vars[c][i], vars["cpfCandidato"])
+                    query ="INSERT INTO candidato_idioma (idIdioma, cpfCandidato) VALUES ({}, '{}')".format(vars[c][i], vars["cpfCandidato"])
                     database.Insert_Drop(query)
 
         for c in vars:
             if c == "experiencia":
                 for i in range(len(vars[c])):
-                    query ="INSERT INTO experiencia_profissional (empresa, cargo, cpfCandidato, tempo) VALUES ('{}', '{}', {}, {})".format(vars[c][i]["empresa"], vars[c][i]["cargo"], vars["cpfCandidato"], vars[c][i]["tempo"])
+                    query ="INSERT INTO experiencia_profissional (empresa, cargo, cpfCandidato, tempo) VALUES ('{}', '{}', '{}', {})".format(vars[c][i]["empresa"], vars[c][i]["cargo"], vars["cpfCandidato"], vars[c][i]["tempo"])
                     database.Insert_Drop(query)
 
         return True
 
+#DROP
     def dropCandidato (self, cpf):
         query = "DELETE FROM candidato WHERE cpfCandidato = '{}'".format(cpf)
         database = DatabaseManager()
         database.Insert_Drop(query)
 
+#FILTER
     def filtrarCandidato(self,latuser,longuser,vars):
         print(latuser[0])
         query="select candidato.nomeCandidato,candidato.emailCandidato,(6371 * acos(cos(radians({})) * cos(radians(candidato.latitudeCandidato)) * cos(radians({}) - radians(candidato.longitudeCandidato)) + sin(radians({})) * sin(radians(candidato.latitudeCandidato)) )) AS distance from candidato".format(latuser[0],longuser[0],latuser[0])
@@ -69,7 +74,14 @@ class CandidatoDatabase:
         print(result)
         return jsonify(result=result)
 
-    def updateCandidato (self, lat, long, vars, cpf):
+    def listaCandidato(self):
+        database = DatabaseManager()
+        query = "select * from candidato"
+        result = database.Filtrar(query)
+        return jsonify(result = result)
+
+#UPDATE
+    def updateCandidato (self, vars, cpf):
         database = DatabaseManager()
         
         for c in vars:
@@ -81,7 +93,13 @@ class CandidatoDatabase:
         for c in vars:
             if c == "idioma":
                 for i in range(len(vars[c])):
-                    query ="INSERT INTO candidato_idioma (idIdioma, cpfCandidato) VALUES ({}, '{}')".format(vars[c][i], vars["cpfCandidato"])
+                    query ="INSERT INTO candidato_idioma (idIdioma, cpfCandidato) VALUES ({}, '{}')".format(vars[c][i], cpf)
+                    database.Insert_Drop(query)
+
+        for c in vars:
+            if c == "experiencia":
+                for i in range(len(vars[c])):
+                    query ="INSERT INTO experiencia_profissional (empresa, cargo, cpfCandidato, tempo) VALUES ('{}', '{}', '{}', {})".format(vars[c][i]["empresa"], vars[c][i]["cargo"], cpf, vars[c][i]["tempo"])
                     database.Insert_Drop(query)
 
         for c in vars:
@@ -106,6 +124,9 @@ class CandidatoDatabase:
 
         for c in vars:
             if c == "cepCandidato":
+                buscep= cepCoord(vars["cepCandidato"])
+                lat = buscep[0]
+                long = buscep[1]
                 query="UPDATE candidato SET cepCandidato = '{}', latitudeCandidato = {}, longitudeCandidato = {}  WHERE cpfCandidato = '{}'".format(vars[c], lat, long, cpf)
                 database.Insert_Drop(query)
 
@@ -121,5 +142,5 @@ class CandidatoDatabase:
 
         for c in vars:
             if c == "nivelEscolaridade":
-                query="UPDATE candidato SET nivelEscolaridade = {} WHERE cpfCandidato = '{}'".format(vars[c], cpf)
+                query="UPDATE candidato SET nivelEscolaridade = '{}' WHERE cpfCandidato = '{}'".format(vars[c], cpf)
                 database.Insert_Drop(query)
