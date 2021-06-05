@@ -55,6 +55,12 @@ def listaVaga():
     result = Usuario.listarVaga()
     return result
 
+@app.route("/filterVagaPeso/<id>",methods=["GET","POST"])
+def filtrarVagaPeso(id):
+    result = Usuario.filtrarVagaPeso(id)
+    return result
+
+
 #--------------CANDIDATO--------------
 
 #INSERT

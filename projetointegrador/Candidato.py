@@ -39,13 +39,13 @@ class CandidatoDatabase:
 
 #FILTER
     def filtrarCandidato(self,latuser,longuser,vars):
-        print(latuser[0])
-        query="select candidato.nomeCandidato,candidato.emailCandidato,(6371 * acos(cos(radians({})) * cos(radians(candidato.latitudeCandidato)) * cos(radians({}) - radians(candidato.longitudeCandidato)) + sin(radians({})) * sin(radians(candidato.latitudeCandidato)) )) AS distance from candidato".format(latuser[0],longuser[0],latuser[0])
+
+        query="select candidato.nomeCandidato,candidato.emailCandidato,(6371 * acos(cos(radians({})) * cos(radians(candidato.latitudeCandidato)) * cos(radians({}) - radians(candidato.longitudeCandidato)) + sin(radians({})) * sin(radians(candidato.latitudeCandidato)) )) AS distance from candidato".format(latuser, longuser, latuser)
         for x in vars:
             if x == "conhecimento":
-                query = query + " inner join conhecimento on conhecimento.descConhecimento = '{}' inner join candidato_conhecimento on candidato_conhecimento.idCandidato = candidato.idCandidato and candidato_conhecimento.idConhecimento = conhecimento.idConhecimento".format(vars[x])
+                query = query + " inner join conhecimento on conhecimento.descConhecimento = '{}' inner join candidato_conhecimento on candidato_conhecimento.cpfCandidato = candidato.cpfCandidato and candidato_conhecimento.idConhecimento = conhecimento.idConhecimento".format(vars[x])
             if x == "idioma":
-                query = query + " inner join idioma on idioma.descIdioma = '{}' inner join candidato_idioma on candidato_idioma.idCandidato = candidato.idCandidato and candidato_idioma.idIdioma = idioma.idIdioma".format(vars[x])
+                query = query + " inner join idioma on idioma.descIdioma = '{}' inner join candidato_idioma on candidato_idioma.cpfCandidato = candidato.cpfCandidato and candidato_idioma.idIdioma = idioma.idIdioma".format(vars[x])
             where = []
             if x == "nivelEsc":
                 item = "candidato.nivelEscolaridade = '{}'".format(vars[x])
