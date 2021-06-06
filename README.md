@@ -26,11 +26,11 @@ O projeto realizado está na área de recrutamento de candidatos, na qual consis
 O usuário poderá selecionar candidato atráves de filtros, sendo ele: pcd, conhecimento, idioma, vale transporte (vt), nível de escolaridade. Os filtros foram conversados juntamente com o cliente, sendo fixado o vt < 3 km da instituição como vt =0. Todos os filtros são ordenados conforme necessidade e relevancia do usuário para a busca do candidado "ideal". Ao criar uma vaga, a mesma irá trazer os candidatos, assim como, a pesquisa isolada dos candidatos também será permitido. 
 
 ## Tecnologias Utilizadas</br> <a name="-tecnologias"/></a>
-•    Python 3.9</br>
-•    MySQL</br>
-•    Flask</br>
-•    Postman</br>
-•    Heroku</br>
+•    [Python 3.9](https://www.python.org/)</br>
+•    [MySQL] (https://www.mysql.com/)</br>
+•    [Flask 2.0](https://flask.palletsprojects.com/en/2.0.x/)/br>
+•    [Postman](https://www.postman.com/)</br>
+•    [Heroku](https://www.heroku.com/)</br>
 
 
 As escolhas das tecnologias foram baseadas em performance e redução de complexidade. A escolha de um banco relacional MySQL possibilitou a criação de indices que aumentaram a performance do próprio banco com um número volumoso de dados, assim como o MySQL se tornou o mais popular banco de dados Open Source do mundo. Para realizar o deploy da aplicação foi utilizado o Heroku pela facilidade e gratuidade.
@@ -41,6 +41,7 @@ As escolhas das tecnologias foram baseadas em performance e redução de complex
 •    requests </br>
 •    ast</br>
 •    flask_mysqldb</br>
+•    sqlalchemy</br>
 
 As bibliotecas utilizadas facilitaram na comunicação com o banco de dados, assim como cálculos de localização e aproximação dos candidatos. 
 
@@ -87,9 +88,74 @@ As bibliotecas utilizadas facilitaram na comunicação com o banco de dados, ass
 | "/dropCandidato/<cpf>"| "DELETE" | Deletar candidato |
 | "/filterCandidato/cep=<cep>" | "GET/POST" | Filtra candidatos |
 | "/filterCandidato" | "GET" | Filtrar todos os candidatos | 
+   
+##  Exemplos de inserção das rotas disponíveis
+   
+```
+/insertCandidato
+{
+    "nomeCandidato":"João",
+    "cpfCandidato":"0000000000",
+    "dataNascimentoCandidato":"01/01/1999",
+    "emailCandidato":"joao@hotmail.com",
+    "pcdCandidato": 2,
+    "cepCandidato":"12335130",
+    "telResCandidato":"988888888",
+    "telCelCandidato":"988888888",
+    "nivelEsc": "Medio Completo",
+    "conhecimento": [1, 2, 3],
+    "idioma": [1, 2, 3],
+    "experiencia": [{"empresa":"PETROBRAS", "cargo":"DEV", "tempo": 19},{"empresa":"MICROSFT", "cargo":"DEV", "tempo": 10},{"empresa":"EMBRAER", "cargo":"DEV", "tempo": 4}]
+}
+```
+ 
+```
+/insertVaga
+{
+    "nomeVaga":"Vaga",
+    "idUsuario":1,
+    "idConhecimento": 1,
+    "pesoConhecimento": 2,
+    "idIdiomaVaga": 1,
+    "pesoIdioma": 1,
+    "cepVaga":"12335130",
+    "nivelEsc": "Medio Completo",
+    "pesoEscolaridade": 4,
+    "pcdVaga": 2,
+    "pesoPCD": 3,
+    "vt":1
+}
+```
 
+   ```
+/updateVaga/<id>
+INFORMAR A ID DA VAGA NA ROTA E O JSON COM AS INFORMAÇÕES A SEREM ATUALIZADAS
+NO EXEMPLO ESTOU ATUALIZANDO APENAS O CONHECIMENTO, IDIOMA E O VT
+{
+    "idConhecimento": 2,
+    "idIdiomaVaga": 2,
+    "vt":0
+}
+ ```
+   
+   ```  
+/dropVaga/<id>
+INFORMAR APENAS A ID NA ROTA
+  ```
+  ``` 
+/filterVaga/<id>
+INFORMAR APENAS A ID NA ROTA
+  ``` 
+   
+   ``` 
+   /filterVagaPeso/<id>
+INFORMAR A ID DA VAGA NA ROTA E O JSON COM A ORDENAÇÃO
+NO EXEMPLO DE JSON ELE ORDENA PRIMEIRAMENTE OS CANDIDATOS COM PCD E POSTERIORMENTE PELO IDIOMA 
+{
+    "order":["pcdCandidato","idioma.idIdioma"]
+}
   
-
+  ``` 
 # Backlog</br> <a name="-backlog"/></a>
 
 * **SPRINT 1 - 28/03**
