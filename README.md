@@ -27,8 +27,8 @@ O usuário poderá selecionar candidato atráves de filtros, sendo ele: pcd, con
 
 ## Tecnologias Utilizadas</br> <a name="-tecnologias"/></a>
 •    [Python 3.9](https://www.python.org/)</br>
-•    [MySQL] (https://www.mysql.com/)</br>
-•    [Flask 2.0](https://flask.palletsprojects.com/en/2.0.x/)/br>
+•    [MySQL](https://www.mysql.com/)</br>
+•    [Flask 2.0](https://flask.palletsprojects.com/en/2.0.x/)</br>
 •    [Postman](https://www.postman.com/)</br>
 •    [Heroku](https://www.heroku.com/)</br>
 
