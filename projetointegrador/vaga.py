@@ -26,25 +26,35 @@ class VagaDatabase:
         
         for c in result:
             query="select candidato.nomeCandidato,candidato.emailCandidato,(6371 * acos(cos(radians({})) * cos(radians(candidato.latitudeCandidato)) * cos(radians({}) - radians(candidato.longitudeCandidato)) + sin(radians({})) * sin(radians(candidato.latitudeCandidato)) )) AS distance from candidato".format(c["latitudeVaga"], c["longitudeVaga"], c["latitudeVaga"])
-            for x in c:
+            item = 1
+            for x in c:            
                 if x == "idConhecimento":
-                    query = query + " inner join conhecimento on conhecimento.idConhecimento = {} inner join candidato_conhecimento on candidato_conhecimento.cpfCandidato = candidato.cpfCandidato and candidato_conhecimento.idConhecimento = conhecimento.idConhecimento".format(c["idConhecimento"])
-                    print(query)
+                    if c["idConhecimento"] != None: 
+                        query = query + " inner join conhecimento on conhecimento.idConhecimento = {} inner join candidato_conhecimento on candidato_conhecimento.cpfCandidato = candidato.cpfCandidato and candidato_conhecimento.idConhecimento = conhecimento.idConhecimento".format(c["idConhecimento"])
                 if x == "idIdiomaVaga":
-                    query = query + " inner join idioma on idioma.idIdioma = {} inner join candidato_idioma on candidato_idioma.cpfCandidato = candidato.cpfCandidato and candidato_idioma.idIdioma = idioma.idIdioma".format(c["idIdiomaVaga"])
-                    print(query)
-                where = []
+                    if c["idIdiomaVaga"] != None: 
+                        query = query + " inner join idioma on idioma.idIdioma = {} inner join candidato_idioma on candidato_idioma.cpfCandidato = candidato.cpfCandidato and candidato_idioma.idIdioma = idioma.idIdioma".format(c["idIdiomaVaga"])
                 if x == "nivelEscolaridade":
-                    item = "where candidato.nivelEscolaridade = '{}'".format(c["nivelEscolaridade"])
-                    where.append(item)
+                    if c["nivelEscolaridade"] != None: 
+                        item = " where candidato.nivelEscolaridade = '{}'".format(c["nivelEscolaridade"])
+                        query = query + item
+                        item = 0
                 if x == "pcdVaga":
-                    item = "and candidato.pcdCandidato = {}".format(c["pcdVaga"])
-                    where.append(item)
+                    if c["pcdVaga"] != None:
+                        if item == 0:
+                            item = " and candidato.pcdCandidato = {}".format(c["pcdVaga"])
+                            query = query + item
+                        else:
+                            item = " where candidato.pcdCandidato = {}".format(c["pcdVaga"])
+                            query = query + item
+                            print(query)
                 if x == "vt":
-                    if c["vt"] == 0:
-                        query = query + " having distance <= 3"
-                    else:
-                        query = query + " having distance > 3"
+                    if c["vt"] != None: 
+                        if c["vt"] == 0:
+                            query = query + " having distance <= 3"
+                        else:
+                            query = query + " having distance > 3"
+                
                 
             print(query)
             database = DatabaseManager()
