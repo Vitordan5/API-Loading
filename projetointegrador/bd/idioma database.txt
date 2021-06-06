@@ -1,0 +1,8 @@
+insert into idioma (idIdioma, descIdioma) values (1, 'frances');
+insert into idioma (idIdioma, descIdioma) values (2, 'arabe');
+insert into idioma (idIdioma, descIdioma) values (3, 'espanhol');
+insert into idioma (idIdioma, descIdioma) values (4, 'frances');
+insert into idioma (idIdioma, descIdioma) values (5, 'ingles');
+insert into idioma (idIdioma, descIdioma) values (6, 'polones');
+insert into idioma (idIdioma, descIdioma) values (7, 'espanhol');
+insert into idioma (idIdioma, descIdioma) values (8, 'holandes');

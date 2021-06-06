@@ -1,0 +1,17 @@
+insert into conhecimento (idConhecimento, descConhecimento) values (1, 'almoxarifado');
+insert into conhecimento (idConhecimento, descConhecimento) values (2, 'design');
+insert into conhecimento (idConhecimento, descConhecimento) values (3, 'cientistas dados');
+insert into conhecimento (idConhecimento, descConhecimento) values (4, 'cientistas dados');
+insert into conhecimento (idConhecimento, descConhecimento) values (5, 'java');
+insert into conhecimento (idConhecimento, descConhecimento) values (6, 'administrativo');
+insert into conhecimento (idConhecimento, descConhecimento) values (7, 'python');
+insert into conhecimento (idConhecimento, descConhecimento) values (8, 'Assembly');
+insert into conhecimento (idConhecimento, descConhecimento) values (9, 'almoxarifado');
+insert into conhecimento (idConhecimento, descConhecimento) values (10, 'Ruby');
+insert into conhecimento (idConhecimento, descConhecimento) values (11, 'almoxarifado');
+insert into conhecimento (idConhecimento, descConhecimento) values (12, 'Ruby');
+insert into conhecimento (idConhecimento, descConhecimento) values (13, 'python');
+insert into conhecimento (idConhecimento, descConhecimento) values (14, 'excel');
+insert into conhecimento (idConhecimento, descConhecimento) values (15, 'design');
+insert into conhecimento (idConhecimento, descConhecimento) values (16, 'administrativo');
+insert into conhecimento (idConhecimento, descConhecimento) values (17, 'excel');
