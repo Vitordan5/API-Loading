@@ -23,6 +23,7 @@ class VagaDatabase:
 
     def filtrarVagaPeso(self, id):
         result = self.filtrarVaga(id)
+
         
         for c in result:
             query="select candidato.nomeCandidato,candidato.emailCandidato,(6371 * acos(cos(radians({})) * cos(radians(candidato.latitudeCandidato)) * cos(radians({}) - radians(candidato.longitudeCandidato)) + sin(radians({})) * sin(radians(candidato.latitudeCandidato)) )) AS distance from candidato".format(c["latitudeVaga"], c["longitudeVaga"], c["latitudeVaga"])
@@ -54,8 +55,13 @@ class VagaDatabase:
                             query = query + " having distance <= 3"
                         else:
                             query = query + " having distance > 3"
-                
-                
+
+                if x == "order":
+                    for c in x:
+                        order.append(vars[x][c]) 
+                    order = ','.join(order)
+                    query = query + "order by "+ order
+                                   
             print(query)
             database = DatabaseManager()
             result = database.Filtrar(query)

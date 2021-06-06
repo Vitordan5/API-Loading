@@ -39,36 +39,37 @@ class CandidatoDatabase:
 
 #FILTER
     def filtrarCandidato(self,latuser,longuser,vars):
-
+        item = 1    
         query="select candidato.nomeCandidato,candidato.emailCandidato,(6371 * acos(cos(radians({})) * cos(radians(candidato.latitudeCandidato)) * cos(radians({}) - radians(candidato.longitudeCandidato)) + sin(radians({})) * sin(radians(candidato.latitudeCandidato)) )) AS distance from candidato".format(latuser, longuser, latuser)
         for x in vars:
             if x == "conhecimento":
                 query = query + " inner join conhecimento on conhecimento.descConhecimento = '{}' inner join candidato_conhecimento on candidato_conhecimento.cpfCandidato = candidato.cpfCandidato and candidato_conhecimento.idConhecimento = conhecimento.idConhecimento".format(vars[x])
             if x == "idioma":
                 query = query + " inner join idioma on idioma.descIdioma = '{}' inner join candidato_idioma on candidato_idioma.cpfCandidato = candidato.cpfCandidato and candidato_idioma.idIdioma = idioma.idIdioma".format(vars[x])
+            order = []
             where = []
             if x == "nivelEsc":
-                item = "candidato.nivelEscolaridade = '{}'".format(vars[x])
-                where.append(item)
+                item = " where candidato.nivelEscolaridade = '{}'".format(vars[x])
+                item = 0
             if x == "pcd":
-                item = "candidato.pcdCandidato = {}".format(vars[x])
-                where.append(item)
-            if len(where) != 0:
-                where = ' AND '.join(where)
-                query = query + " where " + where
+                if item == 0:
+                    item = " and candidato.pcdCandidato = {}".format(c["pcd"])
+                    query = query + item
+                else:
+                    item = " where candidato.pcdCandidato = {}".format(c["pcd"])
+                    query = query + item
+                    print(query)
             if x == "vt":
                 if vars[x] == 0:
                     query = query + " having distance <= 3"
                 else:
                     query = query + " having distance > 3"
             if x == "order":
-                if vars[x] == "distance":
-                    query = query + " order by distance"
-                elif vars[x] == "nivel desc":
-                    query = query + " order by field(nivelEscolaridade,'sem escolaridade','tecnico','medio completo','ensino superior','pos graduado')"
-                elif vars[x] == "nivel asc":
-                    query = query + " order by field(nivelEscolaridade,'pos graduado','ensino superior','tecnico','medio completo','sem escolaridade')"
-                
+                for c in x:
+                    order.append(vars[x][c]) 
+                order = ','.join(order)
+                query = query + "order by "+ order
+
         database = DatabaseManager()
         result = database.Filtrar(query)
         print(result)
