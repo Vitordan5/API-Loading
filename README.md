@@ -18,14 +18,20 @@
 # Apresentação do Projeto</br>
 
 ## Visão do Projeto</br> <a name="-visao"/></a>
-O projeto consiste na criação de uma api web simples para busca de candidatos e vagas de emprego, com foco na otimização na seleção de candidatos.
+O projeto realizado está na área de recrutamento de candidatos, na qual consiste na criação de uma api web simples para criação de vaga e busca do candidato, com foco na otimização da seleção. A estruturação de um eficiente processo de recrutamento facilita a seleção de talentos e competências necessárias para a continuidade e o sucesso das instituições.
 </br></br>
+
+## Funcionalidade </br>
+
+O usuário poderá selecionar candidato atráves de filtros 
 
 ## Tecnologias Utilizadas</br> <a name="-tecnologias"/></a>
 •    Python 3.9</br>
 •    MySQL</br>
 •    Flask</br>
 •    Postman</br>
+
+
 
 ## Bibliotecas Utilizadas</br> <a name="-bibliotecas"/></a>
 •    requests </br>
@@ -77,26 +83,27 @@ O projeto consiste na criação de uma api web simples para busca de candidatos 
 
 # Backlog</br> <a name="-backlog"/></a>
 
-* **SPRINT 0 - 28/03**
+* **SPRINT 1 - 28/03**
 
 - [x] Modelo do banco: Modelo Lógica e Física 
 - [x] Interface para filtros 
 - [x] Parametrização dos filtros: PCD, dependentes, gênero, idioma e nivel de escolaridade
 
-* **SPRINT 1  -  18-04** 
+* **SPRINT 2  -  18-04** 
 - [x] Desenvolvimento das rotas de CRUD (usuários, vagas e candidatos) 
 - [x] Desenvolvimento dos indices no banco de dados - otimização de performance no banco de dados 
 - [x] Melhorias na documentação do projeto 
 
-* **SPRINT 2 - 16-05** 
+* **SPRINT 3 - 16-05** 
 - [x] Melhorias na arquitetura 
 - [x] Reestruturação do banco de dados - adicionar colunas na otimização de filtro de localização 
 - [x] Desenvolvimento de rotas de filtros otimizados e ordenados: localização, nivel de escolaridade, pcd, idioma  
 
-* **SPRINT 3 - 05-06** 
-- [ ] Otimização do filtro nivel de escolaridade 
-- [ ] Otimização do filtro de vaga - trazer como resultado candidatos 
-- [ ] Documentação de implementação do projeto 
+* **SPRINT 4 - 05-06** 
+- [x] Otimização do filtro nivel de escolaridade 
+- [x] Otimização do filtro de vaga - trazer como resultado candidatos 
+- [x] Otimização do filtro de candidatos - capacidade de ordenação dos filtros estabelecidos 
+- [x] Documentação de implementação do projeto
 
 # Arquitetura do Projeto <a name="-arquitetura"/></a>
 ![alt text](https://github.com/Vitordan5/API-Loading/blob/main/gifs/arquitetura.jpeg)
@@ -108,7 +115,6 @@ O projeto consiste na criação de uma api web simples para busca de candidatos 
 </br></br>
 
 # Equipe</br> <a name="-equipe"/></a>
-Daniel Bolognesi </br>
 Fernanda Salles </br>
 Gabriel Angelo </br>
 Isis Moraes </br>
