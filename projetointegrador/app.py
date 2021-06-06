@@ -8,7 +8,7 @@ from db import *
 app = Flask("JETSOFT")
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = '1234'
+app.config['MYSQL_PASSWORD'] = '97855818'
 app.config['MYSQL_DB'] = 'mydb'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 mysql = MySQL(app) 
@@ -57,7 +57,8 @@ def listaVaga():
 
 @app.route("/filterVagaPeso/<id>",methods=["GET","POST"])
 def filtrarVagaPeso(id):
-    result = Usuario.filtrarVagaPeso(id)
+    order = request.get_json()
+    result = Usuario.filtrarVagaPeso(order,id)
     return result
 
 

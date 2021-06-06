@@ -5,7 +5,7 @@ class VagaDatabase:
     def insertVaga(self, lat, long, vars):
         database = DatabaseManager()
         
-        query="INSERT INTO vaga (nomeVaga, idUsuario, idConhecimento, pesoConhecimento, idIdiomaVaga, pesoIdioma, cepVaga, latitudeVaga, longitudeVaga, nivelEscolaridade, pesoEscolaridade, pcdVaga, pesoPCD, vt) VALUES ('{}', {}, {}, {}, {}, {}, {}, {}, {}, '{}', {}, {}, {}, {})".format(vars["nomeVaga"], vars["idUsuario"], vars["idConhecimento"], vars["pesoConhecimento"],vars["idIdiomaVaga"], vars["pesoIdioma"], vars["cepVaga"], lat, long, vars["nivelEsc"], vars["pesoEscolaridade"], vars["pcdVaga"], vars["pesoPCD"], vars["vt"])
+        query="INSERT INTO vaga (nomeVaga, idUsuario, idConhecimento, idIdiomaVaga, cepVaga, latitudeVaga, longitudeVaga, nivelEscolaridade, pcdVaga, vt) VALUES ('{}', {}, {}, {}, {}, {}, {}, '{}', {}, {})".format(vars["nomeVaga"], vars["idUsuario"], vars["idConhecimento"],vars["idIdiomaVaga"], vars["cepVaga"], lat, long, vars["nivelEsc"], vars["pcdVaga"], vars["vt"])
         database.Insert_Drop(query)
 
         return True
@@ -21,8 +21,9 @@ class VagaDatabase:
         result = database.Filtrar(query)
         return result
 
-    def filtrarVagaPeso(self, id):
+    def filtrarVagaPeso(self,order, id):
         result = self.filtrarVaga(id)
+
         
         for c in result:
             query="select candidato.nomeCandidato,candidato.emailCandidato,(6371 * acos(cos(radians({})) * cos(radians(candidato.latitudeCandidato)) * cos(radians({}) - radians(candidato.longitudeCandidato)) + sin(radians({})) * sin(radians(candidato.latitudeCandidato)) )) AS distance from candidato".format(c["latitudeVaga"], c["longitudeVaga"], c["latitudeVaga"])
@@ -54,12 +55,18 @@ class VagaDatabase:
                             query = query + " having distance <= 3"
                         else:
                             query = query + " having distance > 3"
-                
-                
-            print(query)
-            database = DatabaseManager()
-            result = database.Filtrar(query)
-            return jsonify(result=result)
+
+        for c in order["order"]:
+            dd = []
+            dd.append(c) 
+        dd = ','.join(dd)
+        query = query + " order by "+ dd
+        print(query)
+                                   
+        print(query)
+        database = DatabaseManager()
+        result = database.Filtrar(query)
+        return jsonify(result=result)
 
     
     def listarVaga(self):
