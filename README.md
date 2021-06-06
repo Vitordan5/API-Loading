@@ -23,7 +23,7 @@ O projeto realizado está na área de recrutamento de candidatos, na qual consis
 
 ## Funcionalidade </br>
 
-O usuário poderá selecionar candidato atráves de filtros, sendo ele: pcd, conhecimento, idioma, vale transporte (vt), nível de escolaridade. Os filtros foram conversados juntamente com o cliente, sendo fixado o vt < 3 km da instituição como vt =0. Todos os filtros são ordenados conforme necessidade e relevancia do usuário para a busca do candidado "ideal". Ao criar uma vaga, a mesma irá trazer os candidatos, assim como, a pesquisa isolada dos candidatos também será permitido. 
+O usuário poderá selecionar candidato atráves de filtros, sendo ele: pcd, conhecimento, idioma, vale transporte (vt), nível de escolaridade. Os filtros foram alinhados juntamente com o cliente, sendo fixado o vt < 3 quilômetros da instituição como vt =0. Todos os filtros são ordenados conforme necessidade e relevancia do usuário para a busca do candidado "ideal". Ao criar uma vaga, a mesma irá trazer os candidatos, assim como, a pesquisa isolada dos candidatos também será permitido. 
 
 ## Tecnologias Utilizadas</br> <a name="-tecnologias"/></a>
 •    [Python 3.9](https://www.python.org/)</br>
@@ -191,9 +191,9 @@ NO EXEMPLO DE JSON ELE ORDENA PRIMEIRAMENTE OS CANDIDATOS COM PCD E POSTERIORMEN
 </br></br>
 
 # Equipe</br> <a name="-equipe"/></a>
-Fernanda Salles </br>
-Gabriel Angelo </br>
-Isis Moraes </br>
-Igor Augusto </br>
-Nathan Nascimento </br>
-Vitor Silva </br>
+[Fernanda Salles - Product Owner](https://github.com/ferpsalles)</br>
+[Gabriel Angelo - Developer](https://github.com/angelog)</br>
+[Isis Moraes  - Developer](https://github.com/IsisMoraes)</br>
+[Igor Augusto  - Developer](https://github.com/IgorAugustoAlmeida)</br>
+[Nathan Nascimento  -Developer](https://github.com/N4htan)</br>
+[Vitor Silva - Scrum Master](https://github.com/Vitordan5)</br>
