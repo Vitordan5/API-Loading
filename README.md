@@ -23,13 +23,17 @@ O projeto realizado está na área de recrutamento de candidatos, na qual consis
 
 ## Funcionalidade </br>
 
-O usuário poderá selecionar candidato atráves de filtros 
+O usuário poderá selecionar candidato atráves de filtros, sendo ele: pcd, conhecimento, idioma, vale transporte (vt), nível de escolaridade. Os filtros foram conversados juntamente com o cliente, sendo fixado o vt < 3 km da instituição como vt =0. Todos os filtros são ordenados conforme necessidade e relevancia do usuário para a busca do candidado "ideal". Ao criar uma vaga, a mesma irá trazer os candidatos, assim como, a pesquisa isolada dos candidatos também será permitido. 
 
 ## Tecnologias Utilizadas</br> <a name="-tecnologias"/></a>
 •    Python 3.9</br>
 •    MySQL</br>
 •    Flask</br>
 •    Postman</br>
+•    Heroku</br>
+
+
+As escolhas das tecnologias foram baseadas em performance e redução de complexidade. A escolha de um banco relacional MySQL possibilitou a criação de indices que aumentaram a performance do próprio banco com um número volumoso de dados, assim como o MySQL se tornou o mais popular banco de dados Open Source do mundo. Para realizar o deploy da aplicação foi utilizado o Heroku pela facilidade e gratuidade.
 
 
 
@@ -38,6 +42,7 @@ O usuário poderá selecionar candidato atráves de filtros
 •    ast</br>
 •    flask_mysqldb</br>
 
+As bibliotecas utilizadas facilitaram na comunicação com o banco de dados, assim como cálculos de localização e aproximação dos candidatos. 
 
 
 ## Instruções de implementação </br> <a name="-instrucao"/></a>
@@ -70,16 +75,20 @@ O usuário poderá selecionar candidato atráves de filtros
 
 |  ROTAS  CRUD | METHOD | RESPOSTA |
 |--------|----------|----------|
-| "/candidatos" ; "/vagas" ; "/user" | "GET" | Listar objeto requisitado  |
-| "/candidato/<id>" ; "/vagas/<id>" ; "/user/<id>" | "GET" | Overview do objeto requisitado  |
-| "/candidato" ; "/user" ; "/vaga" | "POST" | Cadastrar do objeto |
-| "/candidato" ; "/user" ; "/vaga" | "DELETE" | Deletar do objeto |
-| "/candidato" ; "/user" ; "/vaga" | "PUT" | Atualizar do objeto | 
-   
-| ROTAS FILTROS | METHOD | RESPOSTA |
-|--------|----------|----------|
-|"/filterCandidato/cep=<cep>" |"GET" | Lista de candidatos filtrada|
+| "/insertUsuario" | "POST" | Criação de usuários que são capazes de criar vagas |
+| "/insertVaga | "POST" | Inserção de vaga no banco de dados|
+| "/updateVaga/<id>" | "PUT" | Update das descrições da vaga |
+| "/dropVaga/<id>"| "DELETE" | Deletar Vaga |
+| "/filterVaga/<id>" | "GET/POST" | Filtrar as informações da vaga |
+| "/filterVaga" | "GET/POST" | Listar todas as vagas disponíveis | 
+| "/filterVagaPeso/<id>" | "GET/POST" | Filtro da vaga retornando os candidatos | 
+| "/insertCandidato" | "POST" | Inserir candidatos |
+| "/updateCandidato/<cpf>" | "PUT" | Atualização dos dados do candidato |
+| "/dropCandidato/<cpf>"| "DELETE" | Deletar candidato |
+| "/filterCandidato/cep=<cep>" | "GET/POST" | Filtra candidatos |
+| "/filterCandidato" | "GET" | Filtrar todos os candidatos | 
 
+  
 
 # Backlog</br> <a name="-backlog"/></a>
 
@@ -103,6 +112,7 @@ O usuário poderá selecionar candidato atráves de filtros
 - [x] Otimização do filtro nivel de escolaridade 
 - [x] Otimização do filtro de vaga - trazer como resultado candidatos 
 - [x] Otimização do filtro de candidatos - capacidade de ordenação dos filtros estabelecidos 
+- [x] Autentificação do usuário na criação de vagas - requisito de segurança
 - [x] Documentação de implementação do projeto
 
 # Arquitetura do Projeto <a name="-arquitetura"/></a>
@@ -111,7 +121,7 @@ O usuário poderá selecionar candidato atráves de filtros
 
 
 # Diagrama e Modelo Relacional</br> <a name="-diagrama"/></a>
- ![alt text](https://github.com/Vitordan5/API-Loading/blob/main/gifs/EER.png)
+ ![alt text](https://github.com/Vitordan5/API-Loading/blob/main/gifs/bancodedados.jpeg)
 </br></br>
 
 # Equipe</br> <a name="-equipe"/></a>
