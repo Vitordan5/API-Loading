@@ -1,0 +1,21 @@
+insert into experiencia_profissional (idExpProf, empresa, cargo, cpfCandidato, tempo) values (1, 'Zoomzone', 'Design Engineer', '3344392956', 1);
+insert into experiencia_profissional (idExpProf, empresa, cargo, cpfCandidato, tempo) values (2, 'Miboo', 'Account Coordinator', '5526850668', 2);
+insert into experiencia_profissional (idExpProf, empresa, cargo, cpfCandidato, tempo) values (3, 'Buzzdog', 'Senior Quality Engineer', '7719663217', 3);
+insert into experiencia_profissional (idExpProf, empresa, cargo, cpfCandidato, tempo) values (4, 'Kamba', 'Community Outreach Specialist', '1770262091', 4);
+insert into experiencia_profissional (idExpProf, empresa, cargo, cpfCandidato, tempo) values (5, 'Quatz', 'Payment Adjustment Coordinator', '8027279186', 5);
+insert into experiencia_profissional (idExpProf, empresa, cargo, cpfCandidato, tempo) values (6, 'Thoughtbeat', 'Programmer Analyst IV', '4366653451', 6);
+insert into experiencia_profissional (idExpProf, empresa, cargo, cpfCandidato, tempo) values (7, 'Edgeblab', 'Operator', '5323458992', 7);
+insert into experiencia_profissional (idExpProf, empresa, cargo, cpfCandidato, tempo) values (8, 'Flashpoint', 'Junior Executive', '2060282373', 8);
+insert into experiencia_profissional (idExpProf, empresa, cargo, cpfCandidato, tempo) values (9, 'Skyndu', 'Physical Therapy Assistant', '5487783241', 9);
+insert into experiencia_profissional (idExpProf, empresa, cargo, cpfCandidato, tempo) values (10, 'Youspan', 'Data Coordiator', '5553851661', 10);
+insert into experiencia_profissional (idExpProf, empresa, cargo, cpfCandidato, tempo) values (11, 'Agimba', 'Senior Sales Associate', '0303550457', 11);
+insert into experiencia_profissional (idExpProf, empresa, cargo, cpfCandidato, tempo) values (12, 'Thoughtbridge', 'Librarian', '6009326214', 12);
+insert into experiencia_profissional (idExpProf, empresa, cargo, cpfCandidato, tempo) values (13, 'Thoughtstorm', 'Database Administrator I', '3724292708', 13);
+insert into experiencia_profissional (idExpProf, empresa, cargo, cpfCandidato, tempo) values (14, 'Vimbo', 'Human Resources Assistant IV', '6244666208', 14);
+insert into experiencia_profissional (idExpProf, empresa, cargo, cpfCandidato, tempo) values (15, 'Miboo', 'Geologist I', '2166230288', 15);
+insert into experiencia_profissional (idExpProf, empresa, cargo, cpfCandidato, tempo) values (16, 'Linkbridge', 'Civil Engineer', '8097677849', 16);
+insert into experiencia_profissional (idExpProf, empresa, cargo, cpfCandidato, tempo) values (17, 'Meejo', 'Sales Associate', '2588210015', 17);
+insert into experiencia_profissional (idExpProf, empresa, cargo, cpfCandidato, tempo) values (18, 'Yadel', 'Executive Secretary', '7816650442', 18);
+insert into experiencia_profissional (idExpProf, empresa, cargo, cpfCandidato, tempo) values (19, 'Quimba', 'Executive Secretary', '9863079588', 19);
+insert into experiencia_profissional (idExpProf, empresa, cargo, cpfCandidato, tempo) values (20, 'Kaymbo', 'Help Desk Operator', '3785116349', 20);
+
