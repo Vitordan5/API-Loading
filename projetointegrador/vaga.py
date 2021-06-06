@@ -5,7 +5,7 @@ class VagaDatabase:
     def insertVaga(self, lat, long, vars):
         database = DatabaseManager()
         
-        query="INSERT INTO vaga (nomeVaga, idUsuario, idConhecimento, pesoConhecimento, idIdiomaVaga, pesoIdioma, cepVaga, latitudeVaga, longitudeVaga, nivelEscolaridade, pesoEscolaridade, pcdVaga, pesoPCD, vt) VALUES ('{}', {}, {}, {}, {}, {}, {}, {}, {}, '{}', {}, {}, {}, {})".format(vars["nomeVaga"], vars["idUsuario"], vars["idConhecimento"], vars["pesoConhecimento"],vars["idIdiomaVaga"], vars["pesoIdioma"], vars["cepVaga"], lat, long, vars["nivelEsc"], vars["pesoEscolaridade"], vars["pcdVaga"], vars["pesoPCD"], vars["vt"])
+        query="INSERT INTO vaga (nomeVaga, idUsuario, idConhecimento, idIdiomaVaga, cepVaga, latitudeVaga, longitudeVaga, nivelEscolaridade, pcdVaga, vt) VALUES ('{}', {}, {}, {}, {}, {}, {}, '{}', {}, {})".format(vars["nomeVaga"], vars["idUsuario"], vars["idConhecimento"],vars["idIdiomaVaga"], vars["cepVaga"], lat, long, vars["nivelEsc"], vars["pcdVaga"], vars["vt"])
         database.Insert_Drop(query)
 
         return True
@@ -56,16 +56,17 @@ class VagaDatabase:
                         else:
                             query = query + " having distance > 3"
 
-                if x == "order":
-                    for c in x:
-                        order.append(vars[x][c]) 
-                    order = ','.join(order)
-                    query = query + "order by "+ order
+        for c in order["order"]:
+            dd = []
+            dd.append(c) 
+        dd = ','.join(dd)
+        query = query + " order by "+ dd
+        print(query)
                                    
-            print(query)
-            database = DatabaseManager()
-            result = database.Filtrar(query)
-            return jsonify(result=result)
+        print(query)
+        database = DatabaseManager()
+        result = database.Filtrar(query)
+        return jsonify(result=result)
 
     
     def listarVaga(self):
