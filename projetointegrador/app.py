@@ -57,7 +57,8 @@ def listaVaga():
 
 @app.route("/filterVagaPeso/<id>",methods=["GET","POST"])
 def filtrarVagaPeso(id):
-    result = Usuario.filtrarVagaPeso(id)
+    order = request.get_json()
+    result = Usuario.filtrarVagaPeso(order,id)
     return result
 
 

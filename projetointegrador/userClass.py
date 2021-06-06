@@ -48,9 +48,9 @@ class Usuario:
         result = vaga.listarVaga()
         return result
 
-    def filtrarVagaPeso(id):
+    def filtrarVagaPeso(order,id):
         vaga = VagaDatabase()
-        result = vaga.filtrarVagaPeso(id)
+        result = vaga.filtrarVagaPeso(order,id)
         return result
 
 #--------------CANDIDATO--------------

@@ -21,7 +21,7 @@ class VagaDatabase:
         result = database.Filtrar(query)
         return result
 
-    def filtrarVagaPeso(self, id):
+    def filtrarVagaPeso(self,order, id):
         result = self.filtrarVaga(id)
 
         
