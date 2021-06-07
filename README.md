@@ -91,7 +91,7 @@ As bibliotecas utilizadas facilitaram na comunicação com o banco de dados, ass
    
 ##  Exemplos de inserção das rotas disponíveis
    
-Informar os dados para inserção do Candidato</br>
+Informar os dados para inserção do Candidato:</br>
 · É necessário informar todas os dados;</br>
 · O nível de escolaridade é formado por um ENUM com os seguintes dados (Sem Escolaridade, Tecnico, Medio Completo, Ensino Superior, Pos Graduado);</br>
 · Caso só tenha um idioma e um conhecimento é necessário manter dentro de [ ] conforme o exemplo;</br>
