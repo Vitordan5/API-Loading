@@ -91,15 +91,15 @@ As bibliotecas utilizadas facilitaram na comunicação com o banco de dados, ass
    
 ##  Exemplos de inserção das rotas disponíveis
    
-Informar os dados para inserção do Candidato:
-É necessário informar todas os dados; 
-O nível de escolaridade é formado por um ENUM com os seguintes dados (Sem Escolaridade, Tecnico, Medio Completo, Ensino Superior, Pos Graduado);
-Caso só tenha um idioma e um conhecimento é necessário manter dentro de [] conforme o exemplo;
-Caso só tenha uma experiencia é necessário manter dentro de [{}] conforme o exemplo;
+Informar os dados para inserção do Candidato</br>
+É necessário informar todas os dados;</br>
+O nível de escolaridade é formado por um ENUM com os seguintes dados (Sem Escolaridade, Tecnico, Medio Completo, Ensino Superior, Pos Graduado);</br>
+Caso só tenha um idioma e um conhecimento é necessário manter dentro de [ ] conforme o exemplo;</br>
+Caso só tenha uma experiencia é necessário manter dentro de [ { } ] conforme o exemplo;</br>
    
 ```
 /insertCandidato
-{
+{ 
     "nomeCandidato":"João",
     "cpfCandidato":"0000000000",
     "dataNascimentoCandidato":"01/01/1999",
@@ -117,8 +117,8 @@ Caso só tenha uma experiencia é necessário manter dentro de [{}] conforme o e
 }
 ```
 
-Para realizar o Update:
-Informar o CPF do candidato na rota e o JSON com as informações a serem atualizadas no exemplo serão atualizados apenas o conhecimento e o idioma.
+Para realizar o Update:</br>
+Informar o CPF do candidato na rota e o JSON com as informações a serem atualizadas no exemplo serão atualizados apenas o conhecimento e o idioma.</br>
 
 ```
 /updateCandidato/informar o CPF
@@ -152,8 +152,8 @@ Para listar todos os candidatos cadastrados utilize apenas a rota:
 /filterCandidato
 ```
 
-Informar os dados para inserção da Vaga:
-Nome , IdUsuario e  CEP são essenciais.
+Informar os dados para inserção da Vaga:</br>
+Nome , IdUsuario e  CEP são essenciais.</br>
 
 ```
 /insertVaga
@@ -202,9 +202,9 @@ Para excluir uma vaga utilize apenas a ID da vaga na rota:
 /filterVaga
 ```
 
-Para exibir a vaga com os candidatos filtrados:
-Informe a ID da vaga na rota e o JSON com a ordenação desejada do s candidatos;
-No exemplo ele esta ondenando primeiramente  os candidatos com PCD igual a sim e posteriormente pelo idioma.
+Para exibir a vaga com os candidatos filtrados:</br>
+Informe a ID da vaga na rota e o JSON com a ordenação desejada do s candidatos;</br>
+No exemplo ele esta ondenando primeiramente  os candidatos com PCD igual a sim e posteriormente pelo idioma.</br>
    
    ``` 
    /filterVagaPeso/<id>
