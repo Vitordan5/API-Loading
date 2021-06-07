@@ -118,7 +118,7 @@ Caso só tenha uma experiencia é necessário manter dentro de [{}] conforme o e
 ```
 
 Para realizar o Update:
-Informar o CPF do candidato na rota e o JSON com as informações a serem atualizadas no exemplo serão atualizados apenas o conhecimento e o idioma:
+Informar o CPF do candidato na rota e o JSON com as informações a serem atualizadas no exemplo serão atualizados apenas o conhecimento e o idioma.
 
 ```
 /updateCandidato/informar o CPF
