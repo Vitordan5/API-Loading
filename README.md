@@ -91,6 +91,12 @@ As bibliotecas utilizadas facilitaram na comunicação com o banco de dados, ass
    
 ##  Exemplos de inserção das rotas disponíveis
    
+Informar os dados para inserção do Candidato:
+É necessário informar todas os dados; 
+O nível de escolaridade é formado por um ENUM com os seguintes dados (Sem Escolaridade, Tecnico, Medio Completo, Ensino Superior, Pos Graduado);
+Caso só tenha um idioma e um conhecimento é necessário manter dentro de [] conforme o exemplo;
+Caso só tenha uma experiencia é necessário manter dentro de [{}] conforme o exemplo;
+   
 ```
 /insertCandidato
 {
@@ -105,18 +111,50 @@ As bibliotecas utilizadas facilitaram na comunicação com o banco de dados, ass
     "nivelEsc": "Medio Completo",
     "conhecimento": [1, 2, 3],
     "idioma": [1, 2, 3],
-    "experiencia": [{"empresa":"PETROBRAS", "cargo":"DEV", "tempo": 19},
-    {"empresa":"MICROSFT", "cargo":"DEV", "tempo": 10},
-    {"empresa":"EMBRAER", "cargo":"DEV", "tempo": 4}]
+    "experiencia": [{"empresa":"EXPERIENCIA", "cargo":"DEV", "tempo": 19},
+   {"empresa":"EXPERIENCIA1", "cargo":"DEV", "tempo": 10},
+   {"empresa":"EXPERIENCIA2", "cargo":"DEV", "tempo": 4}]
 }
 ```
+
+Para realizar o Update:
+Informar o CPF do candidato na rota e o JSON com as informações a serem atualizadas no exemplo serão atualizados apenas o conhecimento e o idioma:
+
 ```
-/updateCandidato/<cpf>
+/updateCandidato/informar o CPF
 {
     "conhecimento": [2],
     "idioma": [2],
 } 
 ```
+
+Para excluir um candidato informar apenas o CPF do candidato na rota:
+
+```
+/dropCandidato/informar o CPF
+```
+
+Informar o CEP da "VAGA" na rota para calcular as distancias e o JSON com os filtros caso não queira utilizar algum filtro basta remover a chave:
+
+```
+/filterCandidato/cep= informar o CEP
+{
+    "pcdCandidato": 2,
+    "nivelEsc": "Medio Completo",
+    "conhecimento": 3,
+    "idioma": 2
+}
+```
+
+Para listar todos os candidatos cadastrados utilize apenas a rota:
+
+```
+/filterCandidato
+```
+
+Informar os dados para inserção da Vaga:
+Nome , IdUsuario e  CEP são essenciais.
+
 ```
 /insertVaga
 {
@@ -135,10 +173,10 @@ As bibliotecas utilizadas facilitaram na comunicação com o banco de dados, ass
 }
 ```
 
-   ```
+Informar a ID da vaga na rota e o JSON com as informações a serem atualizadas, no exemplo serão atualizados apenas o conhecimento, idioma e o VT:
+
+```
 /updateVaga/<id>
-INFORMAR A ID DA VAGA NA ROTA E O JSON COM AS INFORMAÇÕES A SEREM ATUALIZADAS
-NO EXEMPLO ESTOU ATUALIZANDO APENAS O CONHECIMENTO, IDIOMA E O VT
 {
     "idConhecimento": 2,
     "idIdiomaVaga": NULL,
@@ -146,19 +184,30 @@ NO EXEMPLO ESTOU ATUALIZANDO APENAS O CONHECIMENTO, IDIOMA E O VT
 }
  ```
    
+Para excluir uma vaga utilize apenas a ID da vaga na rota:   
+   
    ```  
 /dropVaga/<id>
-INFORMAR APENAS A ID NA ROTA
   ```
+ 
+ Para filtrar as informações de uma vaga, utilize apenas a ID da vaga na rota:
+  
   ``` 
 /filterVaga/<id>
-INFORMAR APENAS A ID NA ROTA
   ``` 
+  
+  Para listar todas as vagas cadastradas use apenas a rota:
+ 
+ ```
+/filterVaga
+```
+
+Para exibir a vaga com os candidatos filtrados:
+Informe a ID da vaga na rota e o JSON com a ordenação desejada do s candidatos;
+No exemplo ele esta ondenando primeiramente  os candidatos com PCD igual a sim e posteriormente pelo idioma.
    
    ``` 
    /filterVagaPeso/<id>
-INFORMAR A ID DA VAGA NA ROTA E O JSON COM A ORDENAÇÃO
-NO EXEMPLO DE JSON ELE ORDENA PRIMEIRAMENTE OS CANDIDATOS COM PCD E POSTERIORMENTE PELO IDIOMA 
 {
     "order":["pcdCandidato","idioma.idIdioma"]
 }
