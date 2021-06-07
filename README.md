@@ -235,7 +235,7 @@ No exemplo ele esta ondenando primeiramente  os candidatos com PCD igual a sim e
 - [x] Otimização do filtro nivel de escolaridade 
 - [x] Otimização do filtro de vaga - trazer como resultado candidatos 
 - [x] Otimização do filtro de candidatos - capacidade de ordenação dos filtros estabelecidos 
-- [x] Autentificação do usuário na criação de vagas - requisito de segurança
+- [x] Deploy da aplicação no Heroku
 - [x] Documentação de implementação do projeto
 
 # Arquitetura do Projeto <a name="-arquitetura"/></a>
