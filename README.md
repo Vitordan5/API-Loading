@@ -204,12 +204,12 @@ Para excluir uma vaga utilize apenas a ID da vaga na rota:
 
 Para exibir a vaga com os candidatos filtrados:</br>
 Informe a ID da vaga na rota e o JSON com a ordenação desejada do s candidatos;</br>
-No exemplo ele esta ondenando primeiramente  os candidatos com PCD igual a sim e posteriormente pelo idioma.</br>
+No exemplo ele esta ondenando primeiramente  os candidatos com PCD igual a sim e posteriormente pelo idioma e assim por diante.</br>
    
    ``` 
    /filterVagaPeso/<id>
 {
-    "order":["pcdCandidato","idioma.idIdioma"]
+    "order":["pcdCandidato","idioma.idIdioma", "nivelEscolaridade", "conhecimento.idConhecimento"]
 }
   
   ``` 
