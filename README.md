@@ -78,15 +78,15 @@ As bibliotecas utilizadas facilitaram na comunicação com o banco de dados, ass
 |--------|----------|----------|
 | "/insertUsuario" | "POST" | Criação de usuários que são capazes de criar vagas |
 | "/insertVaga | "POST" | Inserção de vaga no banco de dados|
-| "/updateVaga/<id>" | "PUT" | Update das descrições da vaga |
-| "/dropVaga/<id>"| "DELETE" | Deletar Vaga |
-| "/filterVaga/<id>" | "GET/POST" | Filtrar as informações da vaga |
-| "/filterVaga" | "GET/POST" | Listar todas as vagas disponíveis | 
-| "/filterVagaPeso/<id>" | "GET/POST" | Filtro da vaga retornando os candidatos | 
+| "/updateVaga/informe o id" | "PUT" | Update das descrições da vaga |
+| "/dropVaga/informe o id"| "DELETE" | Deletar Vaga |
+| "/filterVaga/informe o id" | "GET" | Filtrar as informações da vaga |
+| "/filterVaga" | "GET" | Listar todas as vagas disponíveis | 
+| "/filterVagaPeso/informe o id" | "GET" | Filtro da vaga retornando os candidatos | 
 | "/insertCandidato" | "POST" | Inserir candidatos |
-| "/updateCandidato/<cpf>" | "PUT" | Atualização dos dados do candidato |
-| "/dropCandidato/<cpf>"| "DELETE" | Deletar candidato |
-| "/filterCandidato/cep=<cep>" | "GET/POST" | Filtra candidatos |
+| "/updateCandidato/informe o cpf" | "PUT" | Atualização dos dados do candidato |
+| "/dropCandidato/informe o cpf"| "DELETE" | Deletar candidato |
+| "/filterCandidato/cep=informe o cep" | "GET" | Filtra candidatos |
 | "/filterCandidato" | "GET" | Filtrar todos os candidatos | 
    
 ##  Exemplos de inserção das rotas disponíveis
@@ -105,10 +105,18 @@ As bibliotecas utilizadas facilitaram na comunicação com o banco de dados, ass
     "nivelEsc": "Medio Completo",
     "conhecimento": [1, 2, 3],
     "idioma": [1, 2, 3],
-    "experiencia": [{"empresa":"PETROBRAS", "cargo":"DEV", "tempo": 19},{"empresa":"MICROSFT", "cargo":"DEV", "tempo": 10},{"empresa":"EMBRAER", "cargo":"DEV", "tempo": 4}]
+    "experiencia": [{"empresa":"PETROBRAS", "cargo":"DEV", "tempo": 19},
+    {"empresa":"MICROSFT", "cargo":"DEV", "tempo": 10},
+    {"empresa":"EMBRAER", "cargo":"DEV", "tempo": 4}]
 }
 ```
- 
+```
+/updateCandidato/<cpf>
+{
+    "conhecimento": [2],
+    "idioma": [2],
+} 
+```
 ```
 /insertVaga
 {
@@ -133,7 +141,7 @@ INFORMAR A ID DA VAGA NA ROTA E O JSON COM AS INFORMAÇÕES A SEREM ATUALIZADAS
 NO EXEMPLO ESTOU ATUALIZANDO APENAS O CONHECIMENTO, IDIOMA E O VT
 {
     "idConhecimento": 2,
-    "idIdiomaVaga": 2,
+    "idIdiomaVaga": NULL,
     "vt":0
 }
  ```
