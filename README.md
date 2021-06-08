@@ -30,12 +30,9 @@ O usuário poderá selecionar candidato atráves de filtros, sendo ele: pcd, con
 •    [MySQL](https://www.mysql.com/)</br>
 •    [Flask 2.0](https://flask.palletsprojects.com/en/2.0.x/)</br>
 •    [Postman](https://www.postman.com/)</br>
-•    [Heroku](https://www.heroku.com/)</br>
 
 
-As escolhas das tecnologias foram baseadas em performance e redução de complexidade. A escolha de um banco relacional MySQL possibilitou a criação de indices que aumentaram a performance do próprio banco com um número volumoso de dados, assim como o MySQL se tornou o mais popular banco de dados Open Source do mundo. Para realizar o deploy da aplicação foi utilizado o Heroku pela facilidade e gratuidade.
-
-
+As escolhas das tecnologias foram baseadas em performance e redução de complexidade. A escolha de um banco relacional MySQL possibilitou a criação de indices que aumentaram a performance do próprio banco com um número volumoso de dados, assim como o MySQL se tornou o mais popular banco de dados Open Source do mundo.
 
 ## Bibliotecas Utilizadas</br> <a name="-bibliotecas"/></a>
 •    requests </br>
@@ -235,7 +232,7 @@ Para exibir a vaga com os candidatos filtrados:</br>
 - [x] Otimização do filtro nivel de escolaridade 
 - [x] Otimização do filtro de vaga - trazer como resultado candidatos 
 - [x] Otimização do filtro de candidatos - capacidade de ordenação dos filtros estabelecidos 
-- [x] Deploy da aplicação no Heroku
+- [] Deploy da aplicação
 - [x] Documentação de implementação do projeto
 
 # Arquitetura do Projeto <a name="-arquitetura"/></a>
